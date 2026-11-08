@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowDown, Copy, Check, Play, CheckCircle2, ShieldCheck, Bug, Terminal } from 'lucide-react';
+import { ArrowDown, Copy, Check, Play } from 'lucide-react';
 import { PERSONAL_INFO, LIVE_TEST_CONSOLE } from '../data/portfolioData';
 
 interface HeroProps {
@@ -10,7 +10,7 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
   const [activeTab, setActiveTab] = useState<'console' | 'stack' | 'sla'>('console');
   const [runningTest, setRunningTest] = useState(false);
-  const [completedSuites, setCompletedSuites] = useState(LIVE_TEST_CONSOLE);
+  const [completedSuites] = useState(LIVE_TEST_CONSOLE);
 
   const handleRerun = () => {
     setRunningTest(true);
@@ -28,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
           Quality Assurance & Test Automation Specialist
         </span>
         <span className="inline-flex items-center gap-1 px-3 py-1 bg-brand-blue text-white font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink-900 dark:border-white shadow-solid-xs">
-          Nol Gradien • Zero Defect Escapes
+          Core Banking T24 • SIFO • Zero Escapes
         </span>
       </div>
 
@@ -46,9 +46,10 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
 
           <p className="text-lg text-ink-700 dark:text-ink-300 leading-relaxed font-sans max-w-2xl">
             {PERSONAL_INFO.tagline} Menguasai spektrum pengujian menyeluruh: dari 
-            <strong className="text-ink-950 dark:text-white font-semibold"> UAT Finansial Multi-Role (BCA Finance One ME)</strong>, 
-            <strong className="text-ink-950 dark:text-white font-semibold"> Otomasi Agentic QA (Azure AI Foundry)</strong>, 
-            hingga arsitektur pengujian <strong className="text-ink-950 dark:text-white font-semibold"> API & Visual Regression tingkat tinggi</strong>.
+            <strong className="text-ink-950 dark:text-white font-semibold"> Core Banking Temenos T24</strong> (disbursement & reversal), 
+            <strong className="text-ink-950 dark:text-white font-semibold"> Sistem Operasional Cabang SIFO</strong>, 
+            <strong className="text-ink-950 dark:text-white font-semibold"> UAT Finansial BCA Finance (One ME)</strong>, 
+            hingga arsitektur pengujian <strong className="text-ink-950 dark:text-white font-semibold"> Agentic QA berbasis AI</strong>.
           </p>
 
           {/* Action CTAs */}
@@ -83,19 +84,19 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
           <div className="pt-4 border-t-2 border-ink-900/10 dark:border-ink-700/60 grid grid-cols-2 sm:grid-cols-2 gap-3 text-sm font-medium">
             <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
               <span className="w-2.5 h-2.5 bg-brand-blue inline-block border border-ink-900"></span>
-              <span>BCA Finance Core UAT Testing</span>
+              <span>Core Banking Temenos T24</span>
             </div>
             <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
               <span className="w-2.5 h-2.5 bg-brand-amber inline-block border border-ink-900"></span>
-              <span>Baydo AI & Agentic QA Engine</span>
+              <span>SIFO Branch Operations QA</span>
             </div>
             <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
               <span className="w-2.5 h-2.5 bg-brand-emerald inline-block border border-ink-900"></span>
-              <span>Postman, Newman & API Suites</span>
+              <span>BCA Finance One ME UAT</span>
             </div>
             <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
               <span className="w-2.5 h-2.5 bg-brand-crimson inline-block border border-ink-900"></span>
-              <span>Boundary Value & Security QA</span>
+              <span>Baydo Agentic QA Pipeline</span>
             </div>
           </div>
         </div>
@@ -164,7 +165,7 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
                   {runningTest ? (
                     <div className="py-8 text-center space-y-2 text-brand-blue font-bold">
                       <div className="inline-block animate-spin font-display text-2xl">⚙</div>
-                      <p className="text-xs font-mono">Menjalankan 12 assertion suite...</p>
+                      <p className="text-xs font-mono">Menjalankan 14 assertion suite...</p>
                     </div>
                   ) : (
                     completedSuites.map((suite, idx) => (
@@ -199,24 +200,24 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               {activeTab === 'stack' && (
                 <div className="space-y-2">
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">Automation:</span>
-                    <span className="font-bold text-ink-950 dark:text-white">Playwright, PyTest, Selenium, Cypress</span>
+                    <span className="text-ink-500">Core Banking:</span>
+                    <span className="font-bold text-brand-blue">Temenos T24, corAccount, Reverse Disburse</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">API Testing:</span>
-                    <span className="font-bold text-brand-emerald">Postman, Newman, REST Assured, OAuth2</span>
+                    <span className="text-ink-500">Branch System:</span>
+                    <span className="font-bold text-brand-amber">SIFO Front Office, Agunan, Branch ID</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">AI Testing:</span>
-                    <span className="font-bold text-brand-amber">Azure AI Foundry, LLM Prompt Eval, BVA</span>
+                    <span className="text-ink-500">Multifinance:</span>
+                    <span className="font-bold text-brand-emerald">BCA Finance One ME (15 Modul UAT)</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">Domain QA:</span>
-                    <span className="font-bold text-brand-blue">BCA Finance One ME, Credit & SLIK</span>
+                    <span className="text-ink-500">AI & Automation:</span>
+                    <span className="font-bold text-ink-950 dark:text-white">Azure AI Foundry, Playwright, PyTest</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5">
-                    <span className="text-ink-500">Management:</span>
-                    <span className="font-bold text-brand-crimson">JIRA, TestRail, Confluence, GitLab CI/CD</span>
+                    <span className="text-ink-500">Database & Tools:</span>
+                    <span className="font-bold text-brand-crimson">SQL Server, Stored Procedures, JIRA</span>
                   </div>
                 </div>
               )}
@@ -224,10 +225,10 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               {activeTab === 'sla' && (
                 <div className="p-3 bg-brand-emerald/10 dark:bg-brand-emerald/20 border-2 border-brand-emerald text-ink-900 dark:text-ink-100 space-y-2">
                   <div className="font-bold text-brand-emerald">
-                    // QA STANDAR EMAS (ZERO DEFECT ESCAPE):
+                    // CORE BANKING & SIFO VERIFICATION SLA:
                   </div>
                   <p className="leading-relaxed text-[11px]">
-                    "Setiap pengujian mematuhi matriks pelacakan (Traceability Matrix) penuh. Pengujian batas nilai (BVA) dan kasus ekstrim (Edge cases) diuji sebelum rilis UAT agar integritas transaksi finansial 100% terjamin tanpa risiko finansial."
+                    "Setiap alur disbursement, reverse disbursement pada T24, dan validasi fisik agunan pada SIFO diuji dengan integritas transaksi database absolut. Nol toleransi terhadap selisih saldo pembukuan (General Ledger) dan kegagalan sinkronisasi antar cabang."
                   </p>
                 </div>
               )}
@@ -236,10 +237,10 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               <div className="pt-2 flex items-center justify-between text-ink-500 text-[11px] border-t border-ink-900/10 dark:border-ink-700">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-ping"></span>
-                  QA Health: 100% Passed
+                  T24 & SIFO Engine: All Passed
                 </span>
                 <span className="font-bold text-ink-700 dark:text-ink-300">
-                  QA-ID: {PERSONAL_INFO.preferredName.toUpperCase()}@TEST-LAB
+                  QA-ID: {PERSONAL_INFO.preferredName.toUpperCase()}@FIN-CORE
                 </span>
               </div>
             </div>

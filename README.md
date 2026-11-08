@@ -6,15 +6,20 @@ Website portofolio resmi **Muhammad Ihsan Syarifudin** sebagai **Quality Assuran
 
 ## 🎯 Spesialisasi & Domain Pengujian Utama
 
-1. **Enterprise UAT & Fintech Testing (BCA Finance One ME)**:
+1. **Core Banking Temenos T24 — Financial Integration & Disbursement Engine**:
+   - Pengujian integrasi Core Banking Temenos T24 pada level database dan host perbankan.
+   - Verifikasi alur pencairan dana (*disbursement*), prosedur pembalikan transaksi (*reverse disbursement* via Stored Procedure), validasi rekening pinjaman (`corAccount` & `fntLoanApplication`), serta keseimbangan buku besar (*General Ledger*).
+2. **SIFO (Sistem Informasi Front Office) — Branch Operations & Multi-Channel**:
+   - Pengujian sistem operasional cabang untuk registrasi debitur, verifikasi fisik agunan kendaraan (No. Rangka, No. Mesin, BPKB), alokasi pengajuan antar `BranchId`, dan otorisasi *maker-checker-approver*.
+3. **Enterprise UAT & Fintech Testing (BCA Finance One ME)**:
    - Pengujian alur pembiayaan kendaraan & multiguna dengan 15 modul operasional terintegrasi.
    - Verifikasi matematis algoritma bunga kredit, matriks persetujuan multi-role (*CMO, Branch Manager, Credit Analyst*), dan validasi BI Checking/SLIK.
-2. **Agentic QA & AI Test Automation (Baydo AI)**:
+4. **Agentic QA & AI Test Automation (Baydo AI)**:
    - Platform dekonstruksi otomatis dokumen spesifikasi (SRS, PRD, User Stories) berbasis Azure AI Foundry.
    - Ekstraksi skenario Boundary Value Analysis (BVA), Equivalence Partitioning (EP), dan generator dokumen DOCX/PDF siap uji.
-3. **Visual Regression & Compliance Testing (DocDiff Pro)**:
+5. **Visual Regression & Compliance Testing (DocDiff Pro)**:
    - Pengujian regresi dokumen visual native side-by-side untuk inspeksi dokumen kontrak multi-halaman (27+ halaman PDF dan DOCX berat) dengan alat stabilo & markup digital.
-4. **Productivity & 2FA Test Automation (Chrome Extension v1.16.0)**:
+6. **Productivity & 2FA Test Automation (Chrome Extension v1.16.0)**:
    - Otomasi pengisian formulir dan generator token TOTP 2FA internal untuk mengeliminasi inefisiensi pengujian multi-akun pada environment Dev, Staging, dan UAT.
 
 ---
@@ -23,9 +28,9 @@ Website portofolio resmi **Muhammad Ihsan Syarifudin** sebagai **Quality Assuran
 
 - **Zero-Gradient Rule**: Tidak menggunakan *linear-gradient*, *radial-gradient*, maupun efek *mesh-blur*.
 - **Warna Solid Ergonomis**:
+  - **Electric Cobalt (`#1D4ED8`)**: Aksen Core Banking T24, integrasi API, dan aksi navigasi.
+  - **Warm Amber (`#D97706`)**: Penanda SIFO Front Office, efisiensi Agentic QA, dan metrik pengujian cabang.
   - **Forest Jade (`#059669`)**: Simbol status assertion *PASS*, verifikasi mutu, dan ketersediaan rekrutmen QA.
-  - **Electric Cobalt (`#1D4ED8`)**: Aksen enterprise UAT, integrasi API, dan aksi navigasi.
-  - **Warm Amber (`#D97706`)**: Penanda efisiensi Agentic QA, milestone, dan metrik kinerja pengujian.
   - **Crimson Red (`#DC2626`)**: Penanda bug blocker, pengujian batas nilai (BVA), dan analisis celah keamanan.
   - **Ink Charcoal (`#11141A`)**: Garis batas geometris tegas (`border-2 border-ink-900`) dan *solid drop shadow* (`shadow-[4px_4px_0px_#11141A]`).
 - **Dual Theme Support**: Mode terang *Paper Canvas* (`#F6F6F2`) & mode gelap *Obsidian Slate* (`#0D0F12`).
