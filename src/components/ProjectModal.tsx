@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, Cpu, ShieldCheck } from 'lucide-react';
+import { X, Cpu, ShieldCheck, CheckSquare, Wrench } from 'lucide-react';
 import { Project } from '../data/portfolioData';
 
 interface ProjectModalProps {
@@ -54,7 +54,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </span>
             {project.featured && (
               <span className="px-2.5 py-1 text-xs font-mono font-bold uppercase bg-brand-amber text-ink-950 border-2 border-ink-900">
-                ★ Proyek Unggulan
+                ★ Kasus Uji Unggulan
               </span>
             )}
           </div>
@@ -88,11 +88,35 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           ))}
         </div>
 
+        {/* QA Testing Artifacts Banner */}
+        {project.qaArtifacts && (
+          <div className="p-4 bg-paper-alt dark:bg-paper-darkAlt border-2 border-ink-900 dark:border-ink-700 space-y-3 my-6">
+            <div className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-brand-emerald">
+              <CheckSquare size={16} />
+              <span>Matriks Pengujian & Artefak QA</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              <div className="p-2.5 bg-paper-surface dark:bg-paper-darkSurface border border-ink-900/15 dark:border-ink-700">
+                <span className="font-mono text-ink-500 block text-[10px] uppercase">Tipe Pengujian:</span>
+                <span className="font-bold text-ink-900 dark:text-white">{project.qaArtifacts.testType}</span>
+              </div>
+              <div className="p-2.5 bg-paper-surface dark:bg-paper-darkSurface border border-ink-900/15 dark:border-ink-700">
+                <span className="font-mono text-ink-500 block text-[10px] uppercase">Cakupan (Coverage):</span>
+                <span className="font-bold text-brand-blue dark:text-blue-400">{project.qaArtifacts.coverage}</span>
+              </div>
+              <div className="p-2.5 bg-paper-surface dark:bg-paper-darkSurface border border-ink-900/15 dark:border-ink-700 sm:col-span-2">
+                <span className="font-mono text-ink-500 block text-[10px] uppercase">Dampak Pencegahan Bug:</span>
+                <span className="font-bold text-brand-crimson">{project.qaArtifacts.bugPreventionCount}</span>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Deep Technical Overview */}
         <div className="space-y-4 my-6">
           <h4 className="font-mono text-xs uppercase tracking-widest text-ink-500 font-bold flex items-center gap-1.5">
             <Cpu size={15} style={{ color: project.solidAccentColor }} />
-            Arsitektur & Penjelasan Teknis
+            Strategi Pengujian & Penjelasan Sistem
           </h4>
           <p className="text-sm leading-relaxed text-ink-800 dark:text-ink-200">
             {project.longDescription}
@@ -103,7 +127,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className="space-y-3 my-6">
           <h4 className="font-mono text-xs uppercase tracking-widest text-ink-500 font-bold flex items-center gap-1.5">
             <ShieldCheck size={15} style={{ color: project.solidAccentColor }} />
-            Keunggulan Implementasi
+            Metodologi & Verifikasi Kritis
           </h4>
           <div className="space-y-2">
             {project.highlights.map((highlight, i) => (
@@ -123,10 +147,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
         </div>
 
-        {/* Tech Stack Tags */}
+        {/* Tech Stack & QA Tools */}
         <div className="space-y-2 my-6 pt-4 border-t-2 border-ink-900/10 dark:border-ink-700">
           <div className="font-mono text-xs uppercase tracking-widest text-ink-500 font-bold">
-            Teknologi & Dependensi
+            Tools, Frameworks & Lingkungan Uji
           </div>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
@@ -143,15 +167,15 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Modal Actions */}
         <div className="pt-6 border-t-2 border-ink-900 dark:border-ink-700 flex flex-wrap items-center justify-between gap-4">
           <div className="text-xs font-mono text-ink-500">
-            Arsitektur Terverifikasi Skala Produksi
+            Standar Pengujian Terverifikasi Bebas Celah Kritis
           </div>
           <div className="flex items-center gap-3">
             <a
               href="#contact"
               onClick={onClose}
-              className="px-5 py-2.5 bg-ink-900 text-white dark:bg-white dark:text-ink-950 font-bold text-sm border-2 border-ink-900 dark:border-white shadow-solid-xs hover:bg-brand-blue hover:text-white transition-colors"
+              className="px-5 py-2.5 bg-ink-900 text-white dark:bg-white dark:text-ink-950 font-bold text-sm border-2 border-ink-900 dark:border-white shadow-solid-xs hover:bg-brand-emerald hover:text-white transition-colors"
             >
-              Diskusikan Solusi Serupa
+              Diskusikan Kebutuhan QA Anda
             </a>
             <button
               onClick={onClose}

@@ -12,7 +12,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    topic: 'Proyek Fullstack / AI',
+    topic: 'Peluang Karir QA Engineer / Lead QA',
     message: '',
   });
 
@@ -21,7 +21,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
     if (!formData.name || !formData.email || !formData.message) return;
 
     // Construct mailto link
-    const subject = encodeURIComponent(`[Inquiry] ${formData.topic} - dari ${formData.name}`);
+    const subject = encodeURIComponent(`[QA Inquiry] ${formData.topic} - dari ${formData.name}`);
     const body = encodeURIComponent(
       `Halo Ihsan,\n\nNama: ${formData.name}\nEmail: ${formData.email}\nTopik: ${formData.topic}\n\nPesan:\n${formData.message}`
     );
@@ -39,14 +39,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
         {/* Left Column: Direct info */}
         <div className="lg:col-span-5 space-y-6">
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue text-white font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink-900 shadow-solid-xs">
-              <span>[06] Hubungi & Kolaborasi</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-emerald text-white font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink-900 shadow-solid-xs">
+              <span>[06] Rekrutmen & Kolaborasi QA</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-ink-950 dark:text-white tracking-tight">
-              Mari Bangun Sesuatu yang Berdampak
+              Siap Menjaga Kualitas Sistem Anda
             </h2>
             <p className="text-base text-ink-700 dark:text-ink-300 font-sans leading-relaxed">
-              Tertarik mendiskusikan integrasi sistem AI, arsitektur fullstack skala enterprise, atau proyek rekayasa perangkat lunak custom? Saya siap berkolaborasi.
+              Mencari Lead QA Engineer, arsitek test automation, atau ingin mengimplementasikan Agentic AI untuk mereduksi waktu QA tim Anda? Hubungi saya untuk diskusi teknis.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
           <div className="p-6 bg-paper-surface dark:bg-paper-darkSurface border-2 border-ink-900 dark:border-ink-700 shadow-solid space-y-4">
             <div className="flex items-center justify-between pb-3 border-b-2 border-ink-900/10 dark:border-ink-700">
               <span className="font-mono text-xs text-ink-500 uppercase tracking-wider font-bold">
-                Email Utama
+                Email Profesional
               </span>
               <span className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-brand-emerald text-white text-[10px] font-mono font-bold uppercase">
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
@@ -106,7 +106,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
             >
               <div className="flex items-center gap-2">
                 <Github size={16} />
-                <span>GitHub</span>
+                <span>GitHub QA</span>
               </div>
               <ArrowUpRight size={14} />
             </a>
@@ -135,7 +135,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
           >
             <div className="border-b-2 border-ink-900/10 dark:border-ink-700 pb-3">
               <h3 className="font-display font-bold text-xl text-ink-950 dark:text-white">
-                Kirim Pesan Langsung
+                Diskusikan Kebutuhan QA & Testing
               </h3>
               <p className="text-xs text-ink-600 dark:text-ink-400 font-sans mt-0.5">
                 Pesan akan langsung diarahkan ke email pribadi saya.
@@ -152,7 +152,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Misal: Budi Santoso"
+                  placeholder="Misal: Recruiter / Engineering Manager"
                   className="w-full px-3 py-2.5 bg-paper-alt dark:bg-paper-darkAlt border-2 border-ink-900 dark:border-ink-700 text-sm font-sans text-ink-950 dark:text-white focus:outline-none focus:border-brand-blue"
                 />
               </div>
@@ -174,37 +174,38 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
 
             <div className="space-y-1.5">
               <label className="block font-mono text-xs font-bold uppercase text-ink-800 dark:text-ink-200">
-                Topik Kolaborasi
+                Topik Diskusi / Peluang
               </label>
               <select
                 value={formData.topic}
                 onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
                 className="w-full px-3 py-2.5 bg-paper-alt dark:bg-paper-darkAlt border-2 border-ink-900 dark:border-ink-700 text-sm font-sans text-ink-950 dark:text-white focus:outline-none focus:border-brand-blue"
               >
-                <option value="Proyek Fullstack / AI">Proyek Fullstack / Solusi AI Enterprise</option>
-                <option value="Desktop & Native Systems">Desktop & Native Systems Engineering</option>
-                <option value="Peluang Kerja / Rekrutmen">Peluang Karir / Rekrutmen Tim</option>
-                <option value="Konsultasi Teknis Lainnya">Konsultasi Teknis Lainnya</option>
+                <option value="Peluang Karir QA Engineer / Lead QA">Peluang Karir QA Engineer / Lead QA</option>
+                <option value="Otomasi Pengujian & Agentic QA Consultation">Otomasi Pengujian & Agentic QA</option>
+                <option value="Audit Kualitas & UAT Sistem Finansial">Audit Kualitas & UAT Sistem Finansial</option>
+                <option value="Proyek QA Freelance / Kontrak">Proyek QA Freelance / Kontrak</option>
+                <option value="Diskusi Teknis Lainnya">Diskusi Teknis Lainnya</option>
               </select>
             </div>
 
             <div className="space-y-1.5">
               <label className="block font-mono text-xs font-bold uppercase text-ink-800 dark:text-ink-200">
-                Isi Pesan *
+                Detail Kebutuhan Pengujian *
               </label>
               <textarea
                 required
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Ceritakan gambaran proyek atau kebutuhan teknis Anda..."
+                placeholder="Ceritakan gambaran sistem, scope pengujian (UAT/Automation/API), atau detail role yang dibuka..."
                 className="w-full px-3 py-2.5 bg-paper-alt dark:bg-paper-darkAlt border-2 border-ink-900 dark:border-ink-700 text-sm font-sans text-ink-950 dark:text-white focus:outline-none focus:border-brand-blue resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3.5 px-6 bg-brand-blue text-white font-mono text-sm font-bold uppercase tracking-wider border-2 border-ink-900 dark:border-white shadow-solid hover:bg-brand-blueDark hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-solid-sm transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 px-6 bg-brand-emerald text-white font-mono text-sm font-bold uppercase tracking-wider border-2 border-ink-900 dark:border-white shadow-solid hover:bg-emerald-600 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-solid-sm transition-all flex items-center justify-center gap-2"
             >
               {formSubmitted ? (
                 <>

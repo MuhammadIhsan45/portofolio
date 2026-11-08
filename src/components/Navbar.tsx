@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Moon, Sun, Menu, X, ArrowUpRight, CheckSquare } from 'lucide-react';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -19,8 +19,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Proyek', href: '#projects' },
-    { name: 'Keahlian', href: '#skills' },
+    { name: 'Kasus Uji', href: '#projects' },
+    { name: 'Keahlian QA', href: '#skills' },
     { name: 'Pengalaman', href: '#experience' },
     { name: 'Filosofi', href: '#philosophy' },
     { name: 'Palet Warna', href: '#palette' },
@@ -41,8 +41,8 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           href="#"
           className="flex items-center gap-3 group focus:outline-none"
         >
-          <div className="w-10 h-10 bg-ink-900 dark:bg-brand-blue text-white flex items-center justify-center font-mono font-bold text-base tracking-wider border-2 border-ink-900 dark:border-white shadow-solid-xs group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform">
-            IS
+          <div className="w-10 h-10 bg-brand-emerald text-white flex items-center justify-center font-mono font-bold text-base tracking-wider border-2 border-ink-900 dark:border-white shadow-solid-xs group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform">
+            QA
           </div>
           <div>
             <div className="font-display font-bold text-base leading-tight tracking-tight text-ink-950 dark:text-white flex items-center gap-2">
@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             <div className="flex items-center gap-1.5 mt-0.5">
               <span className="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
               <span className="text-xs font-mono text-brand-emerald font-semibold uppercase tracking-wider">
-                Tersedia untuk Kolaborasi
+                Lead QA & Test Automation
               </span>
             </div>
           </div>
@@ -63,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             <a
               key={link.name}
               href={link.href}
-              className="px-3 py-1 text-sm font-semibold text-ink-800 dark:text-ink-200 hover:text-white hover:bg-brand-blue dark:hover:bg-brand-blue transition-colors"
+              className="px-3 py-1 text-sm font-semibold text-ink-800 dark:text-ink-200 hover:text-white hover:bg-brand-emerald dark:hover:bg-brand-emerald transition-colors"
             >
               {link.name}
             </a>
@@ -84,9 +84,9 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           {/* Direct CTA */}
           <a
             href="#contact"
-            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 bg-brand-blue text-white text-sm font-bold border-2 border-ink-900 dark:border-white shadow-solid-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-solid-xs transition-all"
+            className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 bg-brand-emerald text-white text-sm font-bold border-2 border-ink-900 dark:border-white shadow-solid-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-solid-xs transition-all"
           >
-            <span>Hubungi</span>
+            <span>Rekrut QA</span>
             <ArrowUpRight size={16} />
           </a>
 
@@ -109,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-base font-bold text-ink-900 dark:text-white hover:bg-brand-blue hover:text-white border border-transparent hover:border-ink-900 transition-colors"
+              className="block px-3 py-2 text-base font-bold text-ink-900 dark:text-white hover:bg-brand-emerald hover:text-white border border-transparent hover:border-ink-900 transition-colors"
             >
               {link.name}
             </a>
@@ -117,9 +117,9 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           <a
             href="#contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-center mt-3 py-2.5 bg-brand-blue text-white font-bold border-2 border-ink-900 dark:border-white shadow-solid-sm"
+            className="block text-center mt-3 py-2.5 bg-brand-emerald text-white font-bold border-2 border-ink-900 dark:border-white shadow-solid-sm"
           >
-            Mulai Diskusi Proyek
+            Mulai Diskusi Rekrutmen QA
           </a>
         </div>
       )}

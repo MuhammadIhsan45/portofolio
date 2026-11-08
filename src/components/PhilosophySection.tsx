@@ -8,13 +8,13 @@ export const PhilosophySection: React.FC = () => {
         {/* Header */}
         <div className="max-w-3xl space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-crimson text-white font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink-900 shadow-solid-xs">
-            <span>[04] Prinsip & Desain</span>
+            <span>[04] Prinsip & Standar Kualitas</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl text-ink-950 dark:text-white tracking-tight">
-            Filosofi: Warna Tegas, Nol Gradien
+            Filosofi QA: Zero Defect, Nol Gradien
           </h2>
           <p className="text-base sm:text-lg text-ink-700 dark:text-ink-300 leading-relaxed font-sans">
-            Dalam dunia perangkat lunak modern yang sering terjebak dalam efek kosmetik kabur (blur gradients dan AI slop), kami memilih pendekatan <strong>arsitektur editorial & Bauhaus modern</strong>: palet solid berani, batas garis tegas, dan hierarki visual yang jujur.
+            Dalam pengujian sistem perbankan & perangkat lunak enterprise, <strong>kualitas adalah batas biner yang tegas</strong>: sistem lulus atau gagal (*pass or fail*). Tidak ada ruang untuk gradien kabur maupun asumsi setengah matang. Kami menerapkan standar pelaporan yang transparan, terukur, dan dapat direproduksi 100%.
           </p>
         </div>
 
@@ -48,15 +48,15 @@ export const PhilosophySection: React.FC = () => {
           ))}
         </div>
 
-        {/* Comparison Callout */}
+        {/* QA Callout */}
         <div className="mt-8 p-5 bg-paper-surface dark:bg-paper-darkSurface border-2 border-ink-900 dark:border-ink-700 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1">
             <div className="font-display font-bold text-base text-ink-950 dark:text-white flex items-center gap-2">
               <span className="w-3 h-3 bg-brand-emerald inline-block border border-ink-900"></span>
-              Kontras Terverifikasi WCAG AAA
+              Metrik Kualitas: 0 Critical Regression Escapes
             </div>
             <p className="text-xs text-ink-600 dark:text-ink-400">
-              Setiap kombinasi warna pada portofolio ini memiliki rasio kontras ketat sehingga ramah di mata untuk membaca kode dan dokumen teknis.
+              Setiap skenario pengujian diuji dengan Boundary Value Analysis (BVA), Equivalence Partitioning, dan verifikasi alur otorisasi multi-role.
             </p>
           </div>
           <a

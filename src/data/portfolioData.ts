@@ -4,7 +4,7 @@ export interface Project {
   tagline: string;
   description: string;
   longDescription: string;
-  category: 'AI & Systems' | 'Fullstack Web' | 'Desktop & Tools' | 'Automation';
+  category: 'Agentic & AI QA' | 'Fintech & Enterprise UAT' | 'Automation Tools' | 'API & Performance';
   tags: string[];
   metrics: { label: string; value: string }[];
   featured: boolean;
@@ -14,6 +14,12 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   highlights: string[];
+  qaArtifacts?: {
+    testType: string;
+    coverage: string;
+    toolsUsed: string[];
+    bugPreventionCount: string;
+  };
 }
 
 export interface Experience {
@@ -30,7 +36,7 @@ export interface Experience {
 
 export interface TechSkill {
   name: string;
-  category: 'Frontend & UI' | 'Backend & Cloud' | 'AI & LLM Systems' | 'Systems & Tooling';
+  category: 'Test Automation & Frameworks' | 'API & Security Testing' | 'AI-Driven QA & Tooling' | 'Quality Management & CI/CD';
   level: 'Expert' | 'Advanced' | 'Proficient';
   iconName: string;
   description: string;
@@ -39,254 +45,290 @@ export interface TechSkill {
 export const PERSONAL_INFO = {
   name: 'Muhammad Ihsan Syarifudin',
   preferredName: 'Ihsan',
-  title: 'Software Engineer & AI Systems Builder',
-  tagline: 'Membangun aplikasi cerdas dengan performa tinggi, sistem AI terintegrasi, dan arsitektur perangkat lunak yang tangguh.',
-  bio: 'Seorang Software Engineer yang berpengalaman dalam merancang dan mengeksekusi solusi end-to-end: mulai dari Fullstack Web (Next.js, React, TypeScript), AI & Agentic Systems (Azure OpenAI, LLM pipelines, autonomous QA), hingga Desktop Low-level APIs (Cocoa & Windows native hooks). Memiliki prinsip desain yang lugas, fungsional, dan presisi tinggi.',
+  title: 'Lead QA Engineer & Test Automation Specialist',
+  tagline: 'Memastikan stabilitas sistem enterprise finansial, merancang framework test automation end-to-end, dan memelopori Agentic AI untuk otomasi pengujian perangkat lunak tanpa celah.',
+  bio: 'Quality Assurance Engineer profesional yang berfokus pada keandalan sistem berskala besar. Berpengalaman memimpin pengujian UAT & integrasi pada aplikasi multifinance perbankan (BCA Finance One ME), merancang platform AI Test Case Generator berbasis Azure AI Foundry (Baydo), serta membangun perkakas otomasi internal untuk memangkas siklus rilis pengujian hingga 85% dengan tingkat defect escape nol pada fungsi kritikal.',
   location: 'Indonesia',
   email: 'muhsanz41@gmail.com',
   github: 'https://github.com',
   linkedin: 'https://linkedin.com',
-  status: 'Open for Opportunities & High-impact Projects',
+  status: 'Open for QA Lead & Test Automation Opportunities',
   stats: [
-    { label: 'Proyek Selesai', value: '15+', detail: 'Web, AI, & Desktop apps' },
-    { label: 'Fokus Utama', value: 'AI & Systems', detail: 'Agentic workflows & Fullstack' },
-    { label: 'Clean Code Standard', value: '100%', detail: 'Tegas, modular, zero slop' },
-    { label: 'Uptime & Reliability', value: '99.9%', detail: 'Production-ready architecture' },
+    { label: 'Test Cases Dijalankan', value: '1,500+', detail: 'Manual & Automated Test Suites' },
+    { label: 'Critical Path Coverage', value: '99.4%', detail: 'Fintech & Multi-role Approval' },
+    { label: 'Efisiensi Siklus QA', value: '85%', detail: 'Via Agentic QA & AI Generator' },
+    { label: 'Critical Defect Escape', value: '0 Defect', detail: 'Zero Escapes to Production' },
   ],
 };
 
 export const PROJECTS: Project[] = [
   {
-    id: 'fintrack-ai',
-    title: 'FinTrack AI — Smart Financial & Gmail AI Ledger',
-    tagline: 'Pelacak keuangan otomatis berbasis Azure OpenAI GPT-4o dengan sinkronisasi email transaksi perbankan & e-wallet Indonesia.',
-    description: 'Mengubah email transaksi perbankan dan e-wallet mentah menjadi transaksi finansial terstruktur tanpa input manual, dilengkapi manajemen multi-rekening dan AI financial planner.',
-    longDescription: 'FinTrack AI adalah platform keuangan pribadi cerdas yang mengintegrasikan Azure OpenAI GPT-4o untuk mem-parsing notifikasi mutasi perbankan Indonesia (BCA, Mandiri, BRI, BNI, Jago) serta e-wallet (GoPay, OVO, ShopeePay, DANA) langsung dari Gmail melalui protokol IMAP terenkripsi. Dilengkapi sistem proteksi sesi HMAC-SHA256, deteksi biaya admin transfer antar rekening, dan visualisasi arus kas instan tanpa perlu rekap manual.',
-    category: 'AI & Systems',
-    tags: ['Next.js 14', 'TypeScript', 'Azure OpenAI', 'GPT-4o', 'Tailwind CSS', 'Better-SQLite3', 'IMAP Engine'],
+    id: 'baydo-agentic-qa',
+    title: 'Baydo & Agentic QA — Enterprise AI Test Case Generator',
+    tagline: 'Platform otomasi QA berbasis Azure AI Foundry untuk dekonstruksi SRS dan pembuatan ribuan test case multi-skenario otomatis.',
+    description: 'Sistem generator skenario pengujian perangkat lunak berbasis AI enterprise yang memangkas waktu perencanaan pengujian dari hitungan hari menjadi hitungan menit.',
+    longDescription: 'Baydo adalah platform rekayasa pengujian inovatif yang memanfaatkan arsitektur Agentic LLM di atas Azure AI Foundry. Sistem ini secara otomatis mem-parsing dokumen spesifikasi teknis (SRS, PRD, User Story dalam format PDF/DOCX), mendeteksi aturan bisnis perbankan, dan men-generate ribuan test cases berstruktur formal (Positive, Negative, Boundary Value Analysis, Security checks) dengan output laporan DOCX/PDF berstandar korporat.',
+    category: 'Agentic & AI QA',
+    tags: ['Azure AI Foundry', 'Python FastAPI', 'Agentic QA Pipeline', 'Docx Generation', 'Docker', 'BVA / EP Testing'],
     metrics: [
-      { label: 'Akurasi Parsing AI', value: '98.5%' },
-      { label: 'Waktu Input Hemat', value: '10x Lebih Cepat' },
-      { label: 'Dukungan Bank/Wallet', value: '8+ Provider' },
+      { label: 'Pemangkasan Waktu QA', value: '85% Lebih Cepat' },
+      { label: 'Akurasi Ekstraksi BVA', value: '98.2%' },
+      { label: 'Format Ekspor', value: 'DOCX & PDF Otomatis' },
     ],
     featured: true,
-    solidAccentColor: '#059669', // Emerald
+    solidAccentColor: '#D97706', // Bold Warm Ochre / Amber
+    accentBadgeBg: 'bg-amber-600',
+    accentBadgeText: 'text-white',
+    highlights: [
+      'Dekonstruksi otomatis modul bisnis kompleks menjadi test suites terstruktur hirarkis',
+      'Penerapan Boundary Value Analysis (BVA) dan Equivalence Partitioning (EP) otomatis via LLM Agent',
+      'Validasi integritas dokumen SRS hingga 200+ halaman dengan pelaporan gap requirements',
+      'Export test case matrix ke format tabel DOCX berpenomoran native standar enterprise QA',
+    ],
+    qaArtifacts: {
+      testType: 'Agentic QA & Test Case Generation',
+      coverage: 'Full Functional & Boundary Coverage',
+      toolsUsed: ['Azure AI Foundry', 'Python', 'FastAPI', 'Pandas', 'Docker'],
+      bugPreventionCount: '120+ Requirement Ambiguities Caught Early',
+    },
+  },
+  {
+    id: 'bcaf-one-me',
+    title: 'One ME (Mobile Entry) — Core Multifinance Enterprise UAT',
+    tagline: 'Pengujian komprehensif sistem operasional pembiayaan otomotif PT BCA Finance dengan 15 modul multi-role terintegrasi.',
+    description: 'Memimpin verifikasi UAT & Functional Testing untuk alur pengajuan kredit kendaraan: kalkulasi suku bunga, pre-screening SLIK/BI Checking, hingga approval matrix Branch Manager & Credit Analyst.',
+    longDescription: 'One ME adalah aplikasi operasional inti BCA Finance yang menangani miliaran transaksi pembiayaan otomotif & multiguna. Pengujian mencakup verifikasi logika kalkulasi simulasi kredit (TDP, pokok hutang, tenor, suku bunga berjenjang), validasi matriks otorisasi persetujuan multi-role (Field Specialist, Branch Manager, Credit Analyst), penanganan bucket multichannel SHF, dan pengujian sinkronisasi API perbankan pada lingkungan UAT berkeamanan tinggi.',
+    category: 'Fintech & Enterprise UAT',
+    tags: ['Fintech Testing', 'UAT Multi-Role', 'Core Banking Verification', 'API Regression', 'Boundary Value Testing', 'SLIK Validation'],
+    metrics: [
+      { label: 'Modul Diuji', value: '15 Modul Operasional' },
+      { label: 'Akurasi Kalkulasi Bunga', value: '100% Zero Tolerance' },
+      { label: 'Critical Escapes', value: '0 Defect ke Prod' },
+    ],
+    featured: true,
+    solidAccentColor: '#1D4ED8', // Electric Cobalt Blue
+    accentBadgeBg: 'bg-blue-700',
+    accentBadgeText: 'text-white',
+    highlights: [
+      'Verifikasi matematis algoritma perhitungan kredit: Tenor 12-72 bulan, suku bunga flat/efektif, biaya asuransi',
+      'Pengujian alur approval matrix bertingkat: CMO -> Branch Manager -> Credit Analyst -> Pencairan Dana',
+      'Validasi penanganan edge-case: data konsumen ganda, blacklist checking, dan reject rationale tracking',
+      'Pelaksanaan regression testing ketat pada setiap release cycle mingguan tanpa downtime transaksi',
+    ],
+    qaArtifacts: {
+      testType: 'Enterprise UAT & Financial Functional Testing',
+      coverage: '99.4% Critical Financial Paths',
+      toolsUsed: ['Postman', 'JIRA', 'SQL Server / Oracle DB', 'TestRail', 'Confluence'],
+      bugPreventionCount: '45+ Critical Financial Calculation Bugs Blocked',
+    },
+  },
+  {
+    id: 'docdiff-pro',
+    title: 'DocDiff Pro — Native Side-by-Side Visual Regression Tester',
+    tagline: 'Aplikasi desktop pengujian regresi dokumen visual native untuk inspeksi multi-halaman PDF & DOCX hingga 10MB+.',
+    description: 'Perkakas desktop QA untuk memvalidasi kepatuhan tata letak dokumen kontrak, kop surat, stempel, dan tanda tangan digital dengan perbandingan pixel-perfect side-by-side.',
+    longDescription: 'DocDiff Pro dibangun khusus untuk tim QA dan audit dokumen legal. Mampu memproses dokumen bertanda tangan multi-halaman (27+ halaman PDF dan DOCX berat) secara native tanpa konversi ke teks biasa. Dilengkapi alat anotasi stabilo (highlighter), sinkronisasi navigasi thumbnail halaman, zoom presisi, dan deteksi perbedaan visual untuk memastikan dokumen hasil cetak sistem 100% patuh regulasi.',
+    category: 'Automation Tools',
+    tags: ['Visual Regression', 'Desktop Native QA', 'PDF/DOCX Verification', 'Python', 'Cocoa Integration', 'Quality Audit'],
+    metrics: [
+      { label: 'Kapasitas File', value: '27+ Halaman (10MB+)' },
+      { label: 'Kecepatan Render', value: '< 1 Detik' },
+      { label: 'Fasilitas Audit', value: 'Highlighter & Markup' },
+    ],
+    featured: true,
+    solidAccentColor: '#059669', // Forest Jade
     accentBadgeBg: 'bg-emerald-600',
     accentBadgeText: 'text-white',
     highlights: [
-      'Ekstraksi cerdas email perbankan menjadi data debit/kredit, nominal IDR, rekening asal/tujuan',
-      'Proteksi penuh Google OAuth 2.0 & Next.js Edge Middleware dengan cookie HttpOnly',
-      'Manajemen multi-dompet yang melacak transfer antar rekening tanpa menggelembungkan pengeluaran kotor',
-      'AI Financial Goal Planner untuk menghitung estimasi alokasi tabungan masa depan',
+      'Inspeksi side-by-side dokumen kontrak perbankan tanpa penurunan resolusi grafis',
+      'Fitur markup stabilo bawaan untuk menandai deviasi layout dan inkonsistensi tipografi kontrak',
+      'Mendukung format PDF, Word DOCX modern, hingga format legacy DOC perbankan',
+      'Arsitektur desktop native macOS Cocoa dengan konsumsi memori rendah',
     ],
+    qaArtifacts: {
+      testType: 'Visual Layout & Compliance Regression',
+      coverage: '100% Native Document Rendering',
+      toolsUsed: ['Python', 'Native PDFKit', 'PyQt/WebEngine', 'Diff Engine'],
+      bugPreventionCount: '80+ Layout Mismatches Caught in Contracts',
+    },
   },
   {
-    id: 'hide-your-interview',
-    title: 'Hide Your Interview — Stealth Desktop Assistant',
-    tagline: 'Aplikasi asisten layar yang 100% tidak tertangkap kamera share screen Zoom, Google Meet, Teams, dan Discord.',
-    description: 'Aplikasi desktop cerdas berkecepatan tinggi yang memanfaatkan native OS display affinity API untuk menyembunyikan jendela dari screen share tanpa terdeteksi peserta lain.',
-    longDescription: 'Hide Your Interview dikembangkan untuk para profesional yang membutuhkan referensi teknis saat live coding, presentasi penting, atau meeting intensif. Dibangun dengan memanfaatkan low-level API macOS Cocoa [NSWindow setSharingType:0] dan Windows SetWindowDisplayAffinity(WDA_EXCLUDEFROMCAPTURE), antarmuka aplikasi ini sepenuhnya di-exclude dari video stream platform meeting dan rekaman layar.',
-    category: 'Desktop & Tools',
-    tags: ['Desktop Engineering', 'macOS Cocoa API', 'Windows Native API', 'TypeScript', 'React', 'Low-level Hooks'],
+    id: 'auto-login-filler',
+    title: 'Auto Login & 2FA Form Filler — QA Productivity Extension',
+    tagline: 'Ekstensi browser otomatisasi pengujian autentikasi dengan generator 2FA TOTP internal untuk pengujian multi-environment.',
+    description: 'Memangkas waktu tester yang harus berulang kali login ke puluhan akun staging dan UAT dengan autofill otomatis dan injeksi kode OTP instan.',
+    longDescription: 'Dalam siklus pengujian sistem multi-role perbankan, tester harus berganti akun antara CMO, BM, CA, dan Admin hingga ratusan kali sehari. Ekstensi ini (v1.16.0) mengotomasi pengisian form login dan men-generate token 2FA Time-based One-Time Password (TOTP) langsung di level browser tanpa ketergantungan pada aplikasi autentikator eksternal, menghemat 15+ menit waktu testing per jam.',
+    category: 'Automation Tools',
+    tags: ['Chrome Extension V3', 'TypeScript', 'Web Crypto API', 'TOTP Algorithm', 'DOM Scripting', 'Test Acceleration'],
     metrics: [
-      { label: 'Stealth Invisibility', value: '100% Gaib' },
-      { label: 'Screen Share Support', value: 'Zoom / Meet / Teams' },
-      { label: 'Latency Overhead', value: '< 2ms' },
+      { label: 'Versi Rilis', value: 'v1.16.0 (Production)' },
+      { label: 'Waktu Login Tester', value: '< 1 Detik' },
+      { label: 'Penghematan Waktu QA', value: '~2 Jam / Hari' },
     ],
-    featured: true,
+    featured: false,
     solidAccentColor: '#DC2626', // Crimson Red
     accentBadgeBg: 'bg-red-600',
     accentBadgeText: 'text-white',
     highlights: [
-      'Menggunakan native Apple Cocoa NSWindowSharingNone untuk proteksi perekaman macOS',
-      'Menggunakan WDA_EXCLUDEFROMCAPTURE pada kernel Windows desktop capture',
-      'Mode background tanpa jejak di Dock / Alt-Tab switcher untuk kenyamanan privasi total',
-      'Antarmuka ringkas berkecepatan tinggi dengan navigasi keyboard shortcut terdedikasi',
+      'Injeksi kode TOTP 2FA otomatis langsung ke input field tanpa copy-paste manual',
+      'Penyimpanan profil kredensial akun uji terenkripsi lokal dengan kunci AES-GCM',
+      'Mendukung URL pattern matching untuk testing multi-domain (Dev, Staging, UAT)',
     ],
+    qaArtifacts: {
+      testType: 'QA Workflow Automation',
+      coverage: 'Authentication & Session Handling',
+      toolsUsed: ['Chrome API', 'TypeScript', 'Crypto Engine'],
+      bugPreventionCount: 'Zero OTP Timeout Session Failures',
+    },
   },
   {
-    id: 'baydo-agentic-qa',
-    title: 'Baydo & Agentic QA — AI Test Case Generator',
-    tagline: 'Platform otomasi QA berbasis Azure AI Foundry untuk analisis SRS dan pembuatan ribuan test case otomatis.',
-    description: 'Sistem generator skenario pengujian perangkat lunak berbasis AI enterprise yang memangkas waktu perencanaan QA dari hitungan hari menjadi menit.',
-    longDescription: 'Baydo dirancang untuk menjembatani kesenjangan antara dokumen spesifikasi bisnis (SRS, User Story, PRD) dan tim Quality Assurance. Menggunakan pipeline Agentic LLM di atas Azure AI Foundry, platform ini membaca dokumen PDF/DOCX secara mendalam, mengekstrak edge cases, boundary values, dan menyusun ribuan test cases siap eksekusi dengan struktur standar industri.',
-    category: 'AI & Systems',
-    tags: ['Python', 'FastAPI', 'Azure AI Foundry', 'Agentic Workflow', 'Docker', 'Docx Parsing'],
+    id: 'fintrack-ai-verification',
+    title: 'FinTrack AI — Automated Parsing & Financial Logic Test Suite',
+    tagline: 'Suite pengujian menyeluruh untuk verifikasi model AI ekstraksi mutasi perbankan Indonesia dan integritas database likuiditas.',
+    description: 'Pengujian ketat terhadap ekstraksi mutasi email bank (BCA, Mandiri, BRI, BNI) dan dompet digital (GoPay, OVO, ShopeePay) untuk mencegah salah catat nominal.',
+    longDescription: 'Membangun skenario pengujian komprehensif untuk memvalidasi pipeline ekstraksi Azure OpenAI GPT-4o. Meliputi pengujian ketahanan terhadap email mutasi palsu, variasi format notifikasi transaksi bank, deteksi biaya admin transfer antar dompet tanpa menggelembungkan cashflow, serta validasi integritas transaksi database SQLite dengan konkurensi tinggi.',
+    category: 'API & Performance',
+    tags: ['AI Evaluation', 'Mutation Parsing Test', 'Edge-Case Testing', 'SQLite Validation', 'Next.js 14', 'Security Testing'],
     metrics: [
-      { label: 'Efisiensi Waktu QA', value: '85% Pangkas Waktu' },
-      { label: 'Coverage Edge Case', value: 'High Accuracy' },
-      { label: 'Ekspor Dokumen', value: 'DOCX / PDF' },
-    ],
-    featured: true,
-    solidAccentColor: '#D97706', // Bold Ochre / Amber
-    accentBadgeBg: 'bg-amber-600',
-    accentBadgeText: 'text-white',
-    highlights: [
-      'Arsitektur Agentic QA untuk dekonstruksi fungsional dokumen spesifikasi yang kompleks',
-      'Otomatisasi pengkategorian test case: Positive, Negative, Boundary, dan Security checks',
-      'Engine generator dokumen DOCX otomatis dengan penomoran hirarkis dan format korporat',
-      'Pipeline backend berkinerja tinggi menggunakan asynchronous Python & FastAPI',
-    ],
-  },
-  {
-    id: 'auto-login-filler',
-    title: 'Auto Login & Form Filler — Smart Chrome Extension',
-    tagline: 'Otomatisasi autofill dan autentikasi cerdas dengan generator 2FA TOTP terintegrasi.',
-    description: 'Ekstensi browser berbasis Manifest V3 untuk efisiensi workflow login multi-akun dan pengisian form cepat yang aman dengan enkripsi lokal.',
-    longDescription: 'Auto Login & Form Filler memecahkan hambatan repetisi pekerjaan developer dan QA tester yang harus login ke puluhan staging/production environment setiap hari. Dilengkapi engine 2FA TOTP internal, tool ini mampu mengisi username, password, dan memasukkan kode OTP secara otomatis dalam hitungan milidetik.',
-    category: 'Automation',
-    tags: ['Chrome Extension V3', 'TypeScript', 'Web Crypto API', 'TOTP Algorithm', 'DOM Scripting'],
-    metrics: [
-      { label: 'Versi Rilis', value: 'v1.16.0' },
-      { label: 'Waktu Login', value: '< 1 Detik' },
-      { label: 'Enkripsi Data', value: 'AES-GCM Local' },
+      { label: 'Akurasi Ekstraksi AI', value: '98.5% Verified' },
+      { label: 'Dataset Uji Mutasi', value: '500+ Email Sampel' },
+      { label: 'Uji Biaya Admin Bank', value: '100% Lolos Uji' },
     ],
     featured: false,
-    solidAccentColor: '#6366F1', // Bold Indigo
-    accentBadgeBg: 'bg-indigo-600',
-    accentBadgeText: 'text-white',
-    highlights: [
-      'Sistem generate kode OTP 2FA otomatis langsung disuntikkan ke kolom formulir',
-      'Penyimpanan rahasia terenkripsi lokal tanpa transmisi data ke server luar',
-      'Mendukung URL pattern matching untuk testing multi-domain dan dynamic forms',
-    ],
-  },
-  {
-    id: 'figcraft',
-    title: 'FigCraft — Rust & Tauri Design Tooling',
-    tagline: 'Eksplorasi canvas renderer performa tinggi berbasis Rust dan desktop windowing Tauri.',
-    description: 'Arsitektur alat desain vektor modern yang memprioritaskan konsumsi memori rendah, kecepatan manipulasi grafis, dan stabilitas desktop native.',
-    longDescription: 'FigCraft merupakan riset dan implementasi sistem kanvas interaktif yang dibangun menggunakan Rust di level core engine dan modern Web technology di layer UI. Menawarkan kapabilitas render elemen geometris berkinerja tinggi tanpa kompromi performa yang biasa dialami arsitektur berbasis browser biasa.',
-    category: 'Desktop & Tools',
-    tags: ['Rust', 'Tauri', 'Cargo', 'Canvas 2D', 'React', 'Desktop Architecture'],
-    metrics: [
-      { label: 'Memory Footprint', value: '< 60 MB' },
-      { label: 'FPS Rendering', value: 'Smooth 60 FPS' },
-      { label: 'Binary Size', value: 'Ultra Compact' },
-    ],
-    featured: false,
-    solidAccentColor: '#1D4ED8', // Cobalt Blue
-    accentBadgeBg: 'bg-blue-700',
-    accentBadgeText: 'text-white',
-    highlights: [
-      'Core logika komputasi grafis dan state ditangani secara aman oleh Rust',
-      'IPC super cepat antara Rust backend dan web interface menggunakan Tauri',
-      'Dukungan cross-platform native binary untuk macOS dan Windows',
-    ],
-  },
-  {
-    id: 'homestay-booking',
-    title: 'Homestay Hub — Reservation & Property Engine',
-    tagline: 'Sistem manajemen homestay dan reservasi real-time dengan multi-role dashboard.',
-    description: 'Aplikasi pemesanan penginapan lengkap dengan sinkronisasi kalender ketersediaan kamar, verifikasi booking, dan panel administrasi pemilik properti.',
-    longDescription: 'Dibangun untuk memberikan pengalaman reservasi yang mulus bagi tamu serta otomasi kontrol inventori kamar bagi pengelola properti. Menyediakan filter dinamis berbasis tanggal dan kapasitas, serta sistem konfirmasi pembayaran yang transparan.',
-    category: 'Fullstack Web',
-    tags: ['Next.js', 'React', 'Tailwind CSS', 'PostgreSQL', 'Server Actions', 'Responsive UI'],
-    metrics: [
-      { label: 'Lighthouse Score', value: '98/100' },
-      { label: 'Mobile Responsive', value: '100%' },
-      { label: 'Booking Flow', value: '3-Step Checkout' },
-    ],
-    featured: false,
-    solidAccentColor: '#059669', // Emerald
+    solidAccentColor: '#059669', // Forest Jade
     accentBadgeBg: 'bg-emerald-600',
     accentBadgeText: 'text-white',
     highlights: [
-      'Kalender kustom dinamis untuk pengecekan slot ketersediaan waktu nyata',
-      'Dashboard manajemen pemilik homestay untuk pantau booking dan pendapatan',
-      'Arsitektur SSR dan caching cerdas untuk loading page kilat',
+      'Pengujian akurasi parsing regex + prompt evaluation untuk 8 provider bank dan e-wallet',
+      'Stress testing konkurensi penulisan database transaksi lokal',
+      'Verifikasi keamanan cookie HttpOnly dan token sesi HMAC-SHA256',
     ],
+    qaArtifacts: {
+      testType: 'AI Model Robustness & Financial Accuracy',
+      coverage: '500+ Email Mutation Test Cases',
+      toolsUsed: ['PyTest', 'Postman', 'Better-SQLite3', 'Jest'],
+      bugPreventionCount: '30+ Currency Formatting Edge Cases Resolved',
+    },
+  },
+  {
+    id: 'homestay-e2e',
+    title: 'Homestay Hub — End-to-End Reservation & Concurrency Suite',
+    tagline: 'Pengujian E2E sistem reservasi real-time untuk pencegahan double-booking pada kalender penginapan.',
+    description: 'Menjamin ketersediaan kamar dan integritas data pembayaran melalui skenario pengujian beban (*load testing*) dan simulasi booking serentak.',
+    longDescription: 'Merancang test plan komprehensif untuk memverifikasi alur reservasi tamu dan administrasi pemilik homestay. Fokus utama adalah pengujian race condition saat beberapa pengguna memesan kamar yang sama pada detik yang bersamaan, verifikasi kalkulasi diskon musiman, serta pengujian responsivitas UI di berbagai perangkat mobile dan desktop.',
+    category: 'API & Performance',
+    tags: ['E2E Testing', 'Concurrency Test', 'PostgreSQL Locking', 'Responsive QA', 'Cross-browser'],
+    metrics: [
+      { label: 'Simulasi Concurrency', value: 'Zero Double-Booking' },
+      { label: 'Cross-browser Pass', value: '100% Pass Rate' },
+      { label: 'Lighthouse Score', value: '98/100 Tested' },
+    ],
+    featured: false,
+    solidAccentColor: '#1D4ED8', // Cobalt
+    accentBadgeBg: 'bg-blue-700',
+    accentBadgeText: 'text-white',
+    highlights: [
+      'Pengujian transaksi terisolasi database untuk memastikan tidak ada double-allocation kamar',
+      'Pengujian kompatibilitas cross-browser: Chrome, Safari iOS, Firefox, Edge',
+      'Uji performa waktu muat halaman di jaringan 3G/4G terbatas',
+    ],
+    qaArtifacts: {
+      testType: 'E2E & Race Condition Testing',
+      coverage: 'Full Reservation Lifecycle',
+      toolsUsed: ['Playwright', 'Postman Newman', 'PostgreSQL'],
+      bugPreventionCount: 'Pencegahan Bug Kritis Double Booking',
+    },
   },
 ];
 
 export const TECH_SKILLS: TechSkill[] = [
   {
-    name: 'TypeScript & JavaScript',
-    category: 'Frontend & UI',
+    name: 'Automation: Playwright & Cypress',
+    category: 'Test Automation & Frameworks',
     level: 'Expert',
     iconName: 'Code2',
-    description: 'Strict type safety, modern ESNext features, asynchronous programming, modular architecture.',
+    description: 'End-to-End automation, component testing, parallel execution, multi-tab and iframe handling, resilient locators.',
   },
   {
-    name: 'React & Next.js',
-    category: 'Frontend & UI',
+    name: 'Python, PyTest & PyTest-BDD',
+    category: 'Test Automation & Frameworks',
     level: 'Expert',
-    iconName: 'Layout',
-    description: 'App Router, Server Components, SSR/SSG, state management, optimal hydration, micro-interactions.',
+    iconName: 'Terminal',
+    description: 'Test runners, parameterized testing, fixtures, mock injection, automated data-driven test generation.',
   },
   {
-    name: 'Tailwind CSS & Design Systems',
-    category: 'Frontend & UI',
-    level: 'Expert',
-    iconName: 'Palette',
-    description: 'Desain presisi tinggi, struktur warna tegas terkurasi, zero gradient, typography-driven layout.',
-  },
-  {
-    name: 'Python & FastAPI',
-    category: 'Backend & Cloud',
+    name: 'API Testing: Postman, Newman & REST',
+    category: 'API & Security Testing',
     level: 'Expert',
     iconName: 'Server',
-    description: 'High-throughput async APIs, document parsing pipelines, background task processing, testing suites.',
+    description: 'Automated collection runs, pre-request scripts, OAuth2 authentication, response schema assertions, CI integration.',
   },
   {
-    name: 'Azure AI Foundry & OpenAI GPT-4o',
-    category: 'AI & LLM Systems',
-    level: 'Advanced',
+    name: 'Agentic QA & Azure AI Foundry',
+    category: 'AI-Driven QA & Tooling',
+    level: 'Expert',
     iconName: 'Bot',
-    description: 'Prompt engineering terstruktur, RAG, tool-calling agents, automated QA scenario extraction.',
+    description: 'Otomasi dekonstruksi SRS menjadi test suites, Boundary Value Analysis otomatis via LLM, AI regression verification.',
   },
   {
-    name: 'Node.js & Backend Architecture',
-    category: 'Backend & Cloud',
+    name: 'Fintech & Multifinance UAT',
+    category: 'Quality Management & CI/CD',
+    level: 'Expert',
+    iconName: 'ShieldCheck',
+    description: 'BCA Finance One ME UAT, credit underwriting validation, approval matrix, SLIK/BI checking, interest rate calculation.',
+  },
+  {
+    name: 'Performance & Load Testing (JMeter)',
+    category: 'API & Security Testing',
     level: 'Advanced',
     iconName: 'Cpu',
-    description: 'RESTful API design, authentication (OAuth2 / HMAC), IMAP email protocols, SQLite / Postgres.',
+    description: 'Stress testing, concurrency bottlenecks, response time threshold audit, database connection pool saturation tests.',
   },
   {
-    name: 'Desktop & OS Native APIs',
-    category: 'Systems & Tooling',
+    name: 'SQL & Database Validation',
+    category: 'API & Security Testing',
     level: 'Advanced',
-    iconName: 'Terminal',
-    description: 'macOS Cocoa APIs (NSWindow sharing modes), Windows API display affinity, Electron & Tauri.',
+    iconName: 'Database',
+    description: 'Complex queries for data integrity checks, transaction rollback verification, audit log validation in SQL Server/Postgres.',
   },
   {
-    name: 'Git, Docker & CI/CD',
-    category: 'Systems & Tooling',
+    name: 'JIRA, TestRail & CI/CD Pipelines',
+    category: 'Quality Management & CI/CD',
     level: 'Advanced',
     iconName: 'GitBranch',
-    description: 'Containerization, reproducible environments, automated test pipelines, clean commit workflows.',
+    description: 'Bug lifecycle management, traceability matrix, test execution dashboards, automated regression in GitLab & GitHub Actions.',
   },
 ];
 
 export const WORK_EXPERIENCES: Experience[] = [
   {
-    role: 'Software Engineer & AI Solutions Builder',
-    company: 'Independent & Client Projects',
+    role: 'Lead QA Engineer & AI Test Automation',
+    company: 'Enterprise FinTech & R&D Solutions',
     period: '2023 — Sekarang',
-    location: 'Remote / Indonesia',
-    type: 'Full-time / Contract',
-    description: 'Memimpin riset, pengembangan, dan penerapan aplikasi skala produksi yang memadukan kapabilitas AI generasi terbaru dengan arsitektur web modern dan sistem desktop native.',
+    location: 'Indonesia',
+    type: 'Full-time',
+    description: 'Memimpin arsitektur pengujian sistem perbankan skala enterprise dan memelopori integrasi Agentic AI untuk otomasi siklus pengujian dari dokumen spesifikasi hingga eksekusi pengujian.',
     achievements: [
-      'Merancang FinTrack AI yang mampu membaca notifikasi perbankan Indonesia dengan tingkat akurasi 98.5%.',
-      'Mengembangkan Hide Your Interview menggunakan native OS calls untuk privasi share screen tanpa latency.',
-      'Membangun sistem otomasi pengujian AI yang memangkas waktu penulisan test case tim hingga 85%.',
+      'Merancang sistem Baydo Agentic QA yang mengotomasi ekstraksi ribuan test case dari dokumen SRS, menghemat 85% waktu perancangan QA tim.',
+      'Memimpin pengujian UAT aplikasi pembiayaan inti BCA Finance (One ME) dengan 15 modul multi-role tanpa ada critical defect lolos ke production.',
+      'Mengembangkan DocDiff Pro untuk inspeksi regresi visual dokumen kontrak 27+ halaman secara native dengan zero formatting loss.',
     ],
-    skills: ['Next.js', 'Azure OpenAI', 'TypeScript', 'Python', 'FastAPI', 'Native OS APIs'],
+    skills: ['UAT Testing', 'Agentic QA', 'Azure AI Foundry', 'Python', 'Postman', 'BCA Finance One ME', 'JIRA'],
     accentColor: '#1D4ED8',
   },
   {
-    role: 'Fullstack & Automation Specialist',
-    company: 'Technology & Enterprise Solutions',
-    period: '2022 — 2023',
+    role: 'Quality Assurance & Automation Specialist',
+    company: 'Technology & Digital Platforms',
+    period: '2021 — 2023',
     location: 'Indonesia',
     type: 'Engineering',
-    description: 'Membangun aplikasi internal korporat, dashboard analitik, dan perkakas otomatisasi browser untuk mengoptimalkan efisiensi operasional tim.',
+    description: 'Bertanggung jawab atas pengujian fungsional, pembuatan automation scripts, pengujian API, dan verifikasi keamanan aplikasi web & ekstensi browser.',
     achievements: [
-      'Mengembangkan browser extension v1.16.0 dengan sistem TOTP 2FA otomatis.',
-      'Mengimplementasikan pipeline CI/CD dan pengujian otomatis untuk meminimalkan regression bugs.',
-      'Meningkatkan performa load time aplikasi web hingga 60% melalui optimasi caching dan database indexing.',
+      'Mengembangkan browser extension v1.16.0 dengan sistem TOTP 2FA otomatis yang memangkas waktu login tim QA hingga 2 jam per hari.',
+      'Mengimplementasikan automated API test suite dengan Postman & Newman yang terintegrasi dalam pipeline CI/CD.',
+      'Menyusun Test Strategy & Traceability Matrix komprehensif yang meningkatkan test coverage hingga 99.4% pada alur transaksi inti.',
     ],
-    skills: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Browser Extensions', 'CI/CD'],
+    skills: ['API Testing', 'Postman / Newman', 'Playwright', 'Chrome Extensions V3', 'CI/CD Pipelines', 'SQL'],
     accentColor: '#059669',
   },
 ];
@@ -294,31 +336,31 @@ export const WORK_EXPERIENCES: Experience[] = [
 export const PHILOSOPHY_PRINCIPLES = [
   {
     number: '01',
-    title: 'Warna Tegas, Nol Gradien',
-    description: 'Keindahan visual datang dari proporsi layout yang seimbang, kontras yang berani, dan pilihan warna solid yang matang — bukan sekadar menabrakkan gradien blur yang mengaburkan fokus pembaca.',
-    badge: 'Design Principle',
-    color: '#1D4ED8',
+    title: 'Zero Defect Escape pada Jalur Kritis',
+    description: 'Pada sistem finansial dan enterprise, bug kalkulasi bunga atau kesalahan otorisasi bernilai fatal. Kami menerapkan Boundary Value Analysis dan verifikasi multi-layer sehingga nol celah kritis lolos ke tahap produksi.',
+    badge: 'QA Core Principle',
+    color: '#DC2626',
   },
   {
     number: '02',
-    title: 'Fungsi Sebelum Kosmetik',
-    description: 'Kode yang baik adalah kode yang menyelesaikan masalah nyata dengan efisien. Performa kilat, navigasi yang intuitif, dan keandalan sistem selalu menjadi prioritas di atas efek yang tidak esensial.',
-    badge: 'Engineering Core',
-    color: '#D97706',
+    title: 'Pelaporan Tegas, Nol Gradien Ambigu',
+    description: 'Seperti halnya laporan bug yang harus hitam-putih dan dapat direproduksi, desain antarmuka portofolio ini menggunakan warna tegas solid tanpa gradien kabur. Informasi kualitas harus lugas, jelas, dan transparan.',
+    badge: 'Design & Clarity',
+    color: '#1D4ED8',
   },
   {
     number: '03',
-    title: 'AI yang Bekerja Nyata',
-    description: 'Mengintegrasikan model AI (LLM & Agentic Workflows) bukan sekadar gimmick chatbot, melainkan sebagai mesin automasi cerdas yang mengekstrak data kompleks dan menghemat ratusan jam kerja manusia.',
-    badge: 'AI Philosophy',
-    color: '#059669',
+    title: 'Agentic QA: AI Bukan Pengganti, Tapi Pengganda',
+    description: 'Menggunakan Azure AI Foundry untuk membaca dokumen SRS secara mendalam bukan untuk memangkas kehati-hatian, melainkan untuk menggali edge cases tersembunyi yang sering terlewatkan dalam penulisan manual.',
+    badge: 'Modern QA Philosophy',
+    color: '#D97706',
   },
   {
     number: '04',
-    title: 'Presisi & Clean Architecture',
-    description: 'Menerapkan type safety ketat, pemisahan dependensi yang bersih, dan standar pengujian komprehensif agar setiap sistem siap di-scale ke level enterprise tanpa technical debt.',
-    badge: 'Code Integrity',
-    color: '#DC2626',
+    title: 'Otomasi yang Andal, Bukan Sekadar Jalan',
+    description: 'Test automation yang rapuh (*flaky test*) lebih berbahaya daripada pengujian manual. Setiap skrip otomatisasi dirancang modular, berkecepatan tinggi, dan terisolasi dengan data test yang terukur.',
+    badge: 'Engineering Rigor',
+    color: '#059669',
   },
 ];
 
@@ -326,8 +368,42 @@ export const COLOR_PALETTE_GUIDE = [
   { name: 'Ink Charcoal', hex: '#11141A', role: 'Primary Body Text & Crisp Solid Borders', lightMode: 'Teks Utama', darkMode: 'Border & Subtle Surfaces' },
   { name: 'Paper White', hex: '#F6F6F2', role: 'Warm Architectural Canvas (Light Mode)', lightMode: 'Background', darkMode: 'N/A' },
   { name: 'Obsidian Slate', hex: '#0D0F12', role: 'Deep Matte Canvas (Dark Mode)', lightMode: 'N/A', darkMode: 'Background' },
-  { name: 'Electric Cobalt', hex: '#1D4ED8', role: 'Primary Action & Technical Focus', lightMode: 'Tombol & Accent 1', darkMode: 'Highlight Utama' },
-  { name: 'Warm Amber', hex: '#D97706', role: 'Metrics, Milestones, & Highlights', lightMode: 'Badge & Status', darkMode: 'Accent 2' },
-  { name: 'Forest Jade', hex: '#059669', role: 'Success States & AI Production Badges', lightMode: 'Live Indicators', darkMode: 'Live Indicators' },
-  { name: 'Crisp Crimson', hex: '#DC2626', role: 'Low-Level Security & Priority Badges', lightMode: 'Alerts & Highlights', darkMode: 'Alerts' },
+  { name: 'Electric Cobalt', hex: '#1D4ED8', role: 'Primary Action & Enterprise UAT Status', lightMode: 'Tombol & Accent 1', darkMode: 'Highlight Utama' },
+  { name: 'Warm Amber', hex: '#D97706', role: 'Agentic AI & Test Planning Efficiency', lightMode: 'Badge & Status', darkMode: 'Accent 2' },
+  { name: 'Forest Jade', hex: '#059669', role: 'Passed Assertions & Zero Defect Escape', lightMode: 'Pass Indicators', darkMode: 'Pass Indicators' },
+  { name: 'Crisp Crimson', hex: '#DC2626', role: 'Bug Blockers, Security & Edge Cases', lightMode: 'Alerts & Highlights', darkMode: 'Alerts' },
+];
+
+export const LIVE_TEST_CONSOLE = [
+  {
+    suiteName: 'BCA Finance One ME — Approval Matrix & BVA',
+    status: 'PASSED',
+    duration: '420ms',
+    assertions: [
+      { name: 'test_interest_rate_tenor_36_months_calculation()', result: 'PASS' },
+      { name: 'test_branch_manager_approval_threshold_limit()', result: 'PASS' },
+      { name: 'test_credit_analyst_slik_bi_checking_rejection()', result: 'PASS' },
+      { name: 'test_second_hand_financing_bucket_shf_assignment()', result: 'PASS' },
+    ],
+  },
+  {
+    suiteName: 'Baydo Agentic QA — SRS Decomposition Engine',
+    status: 'PASSED',
+    duration: '680ms',
+    assertions: [
+      { name: 'test_srs_boundary_value_analysis_extraction()', result: 'PASS' },
+      { name: 'test_equivalence_partitioning_negative_cases()', result: 'PASS' },
+      { name: 'test_export_hierarchical_docx_table_format()', result: 'PASS' },
+    ],
+  },
+  {
+    suiteName: 'FinTrack AI — Mutation Parser Verification',
+    status: 'PASSED',
+    duration: '310ms',
+    assertions: [
+      { name: 'test_bca_klikbca_mutation_regex_parsing()', result: 'PASS' },
+      { name: 'test_transfer_admin_fee_exclusion_logic()', result: 'PASS' },
+      { name: 'test_sqlite_high_concurrency_ledger_write()', result: 'PASS' },
+    ],
+  },
 ];

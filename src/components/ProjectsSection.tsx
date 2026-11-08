@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import { PROJECTS, Project } from '../data/portfolioData';
 
 interface ProjectsSectionProps {
@@ -9,7 +9,7 @@ interface ProjectsSectionProps {
 export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProject }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('Semua');
 
-  const categories = ['Semua', 'AI & Systems', 'Fullstack Web', 'Desktop & Tools', 'Automation'];
+  const categories = ['Semua', 'Agentic & AI QA', 'Fintech & Enterprise UAT', 'Automation Tools', 'API & Performance'];
 
   const filteredProjects = selectedCategory === 'Semua'
     ? PROJECTS
@@ -20,14 +20,14 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div className="space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue text-white font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink-900 shadow-solid-xs">
-            <span>[01] Showcase Karya</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-emerald text-white font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink-900 shadow-solid-xs">
+            <span>[01] Portofolio Kasus Uji & Sistem QA</span>
           </div>
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-ink-950 dark:text-white tracking-tight">
-            Proyek & Rekayasa Sistem
+            Pengujian Sistem & Rekayasa QA
           </h2>
           <p className="text-base text-ink-700 dark:text-ink-300 max-w-xl">
-            Solusi nyata dari AI financial ledger, low-level stealth desktop hooks, hingga platform enterprise test case automation. Semua dibangun dengan standar keandalan tinggi.
+            Dari pengujian UAT inti multifinance BCA Finance One ME, generator test case Agentic AI, hingga verifikasi regresi dokumen native dan validasi model ekstraksi perbankan.
           </p>
         </div>
 
@@ -133,9 +133,9 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
             <div className="p-4 bg-paper-alt dark:bg-paper-darkAlt border-t-2 border-ink-900 dark:border-ink-700 flex items-center justify-between">
               <button
                 onClick={() => onSelectProject(project)}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-ink-900 text-white dark:bg-white dark:text-ink-950 font-bold text-xs font-mono uppercase tracking-wider border-2 border-ink-900 shadow-solid-xs hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue dark:hover:text-white transition-colors"
+                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 bg-ink-900 text-white dark:bg-white dark:text-ink-950 font-bold text-xs font-mono uppercase tracking-wider border-2 border-ink-900 shadow-solid-xs hover:bg-brand-emerald hover:text-white dark:hover:bg-brand-emerald dark:hover:text-white transition-colors"
               >
-                <span>Lihat Detail Arsitektur</span>
+                <span>Inspeksi Strategi & Artefak QA</span>
                 <ChevronRight size={14} />
               </button>
             </div>

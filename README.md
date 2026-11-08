@@ -1,42 +1,38 @@
-# ⚡ Portofolio Muhammad Ihsan Syarifudin
+# 🧪 Portofolio Muhammad Ihsan Syarifudin — Lead QA Engineer & Test Automation Specialist
 
-Website portofolio rekayasa perangkat lunak modern dengan gaya **Architectural & Neo-Editorial Minimalism**: **100% Bebas Gradien (Zero Gradients)** dengan **Warna Solid Tegas** yang terkurasi, nyaman di mata (WCAG AAA compliant), dan sarat dengan karya rekayasa nyata.
-
----
-
-## 🎨 Karakteristik Desain
-
-1. **Nol Gradien (Zero-Gradient Rule)**:
-   - Tidak menggunakan *linear-gradient*, *radial-gradient*, maupun *mesh-blur*.
-   - Menggunakan warna murni solid yang berani: **Electric Cobalt (`#1D4ED8`)**, **Warm Amber (`#D97706`)**, **Forest Jade (`#059669`)**, **Crimson Red (`#DC2626`)**, dan **Ink Charcoal (`#11141A`)**.
-
-2. **Tipografi & Garis Tegas (Crisp Geometric Borders)**:
-   - Font Google modern: *Plus Jakarta Sans* (bodi teks yang ergonomis), *Space Grotesk* (judul editorial yang tegas), dan *JetBrains Mono* (presisi kode).
-   - Solid drop shadow arsitektural (`shadow-[4px_4px_0px_#11141A]`) dengan micro-interactions saat kursor digerakkan.
-
-3. **Dual Theme (Studio Light & Obsidian Dark)**:
-   - Mode Terang: Warna kertas gipsum arsitektural (`#F6F6F2`) dengan permukaan kartu putih bersih (`#FFFFFF`).
-   - Mode Gelap: Obsidian matte slate (`#0D0F12`) dengan kartu gelap struktural (`#16191F`).
-   - Toggle instan tersimpan otomatis di `localStorage`.
-
-4. **Showcase Proyek Nyata**:
-   - **FinTrack AI**: Ledger perbankan & Gmail AI dengan Azure OpenAI GPT-4o.
-   - **Hide Your Interview**: Desktop assistant dengan proteksi gaib native macOS Cocoa & Windows capture exclusion.
-   - **Baydo AI & Agentic QA**: Otomasi analisis dokumen SRS & generator ribuan test cases.
-   - **Auto Login & Form Filler**: Ekstensi browser Manifest V3 dengan 2FA TOTP generator.
-   - **FigCraft**: Engine grafis kanvas performa tinggi berbasis Rust & Tauri.
-   - **Homestay Platform**: Booking & property management system.
-
-5. **Fitur Interaktif Tambahan**:
-   - **Salin Email 1-Klik**: Disertai animasi selebrasi partikel konfeti warna solid.
-   - **Modal Arsitektur Teknis**: Penjelasan mendalam logika sistem, metrik kinerja, dan stack dari setiap proyek.
-   - **Palet Warna Interaktif**: Swatch warna dengan fitur 1-klik salin kode HEX.
+Website portofolio resmi **Muhammad Ihsan Syarifudin** sebagai **Lead Quality Assurance (QA) Engineer & Test Automation Specialist**, dirancang dengan gaya **Neo-Editorial & Architectural Minimalism**: **100% Bebas Gradien (Zero Gradients)** dengan **Warna Solid Tegas** yang terkurasi, nyaman di mata (WCAG AAA compliant), dan sarat dengan proyek pengujian enterprise nyata.
 
 ---
 
-## 🚀 Menjalankan Secara Lokal
+## 🎯 Spesialisasi & Domain Pengujian Utama
 
-Pastikan Anda telah menginstal **Node.js (>= 18)**.
+1. **Enterprise UAT & Fintech Testing (BCA Finance One ME)**:
+   - Pengujian alur pembiayaan kendaraan & multiguna dengan 15 modul operasional terintegrasi.
+   - Verifikasi matematis algoritma bunga kredit, matriks persetujuan multi-role (*CMO, Branch Manager, Credit Analyst*), dan validasi BI Checking/SLIK.
+2. **Agentic QA & AI Test Automation (Baydo AI)**:
+   - Platform dekonstruksi otomatis dokumen spesifikasi (SRS, PRD, User Stories) berbasis Azure AI Foundry.
+   - Ekstraksi skenario Boundary Value Analysis (BVA), Equivalence Partitioning (EP), dan generator dokumen DOCX/PDF siap uji.
+3. **Visual Regression & Compliance Testing (DocDiff Pro)**:
+   - Pengujian regresi dokumen visual native side-by-side untuk inspeksi dokumen kontrak multi-halaman (27+ halaman PDF dan DOCX berat) dengan alat stabilo & markup digital.
+4. **Productivity & 2FA Test Automation (Chrome Extension v1.16.0)**:
+   - Otomasi pengisian formulir dan generator token TOTP 2FA internal untuk mengeliminasi inefisiensi pengujian multi-akun pada environment Dev, Staging, dan UAT.
+
+---
+
+## 🎨 Karakteristik Desain: Nol Gradien & Warna Tegas
+
+- **Zero-Gradient Rule**: Tidak menggunakan *linear-gradient*, *radial-gradient*, maupun efek *mesh-blur*.
+- **Warna Solid Ergonomis**:
+  - **Forest Jade (`#059669`)**: Simbol status assertion *PASS*, verifikasi mutu, dan ketersediaan rekrutmen QA.
+  - **Electric Cobalt (`#1D4ED8`)**: Aksen enterprise UAT, integrasi API, dan aksi navigasi.
+  - **Warm Amber (`#D97706`)**: Penanda efisiensi Agentic QA, milestone, dan metrik kinerja pengujian.
+  - **Crimson Red (`#DC2626`)**: Penanda bug blocker, pengujian batas nilai (BVA), dan analisis celah keamanan.
+  - **Ink Charcoal (`#11141A`)**: Garis batas geometris tegas (`border-2 border-ink-900`) dan *solid drop shadow* (`shadow-[4px_4px_0px_#11141A]`).
+- **Dual Theme Support**: Mode terang *Paper Canvas* (`#F6F6F2`) & mode gelap *Obsidian Slate* (`#0D0F12`).
+
+---
+
+## 🚀 Cara Menjalankan Secara Lokal
 
 ```bash
 # 1. Masuk ke direktori
@@ -45,11 +41,11 @@ cd "11. portofolio-ihsan"
 # 2. Instal dependensi (jika belum)
 npm install
 
-# 3. Jalankan server pengembangan lokal
+# 3. Jalankan server lokal
 npm run dev
 ```
 
-Buka browser Anda di `http://localhost:5173`.
+Buka `http://localhost:5173` di browser Anda.
 
 ---
 
@@ -60,13 +56,3 @@ npm run build
 ```
 
 Hasil build yang siap di-deploy (misalnya ke Vercel, Netlify, atau Cloudflare Pages) akan berada di dalam folder `dist/`.
-
----
-
-## 🛠️ Stack Teknologi
-
-- **Framework**: React 18 & Vite 5
-- **Bahasa**: TypeScript (Strict Mode)
-- **Styling**: Tailwind CSS 3.4 (Custom Solid Palette & Shadow System)
-- **Ikonografi**: Lucide React
-- **Efek Interaktif**: Canvas Confetti

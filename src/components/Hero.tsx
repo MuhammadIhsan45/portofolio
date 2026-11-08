@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowDown, Copy, Check } from 'lucide-react';
-import { PERSONAL_INFO } from '../data/portfolioData';
+import { ArrowDown, Copy, Check, Play, CheckCircle2, ShieldCheck, Bug, Terminal } from 'lucide-react';
+import { PERSONAL_INFO, LIVE_TEST_CONSOLE } from '../data/portfolioData';
 
 interface HeroProps {
   onCopyEmail: () => void;
@@ -8,7 +8,16 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
-  const [activeTab, setActiveTab] = useState<'status' | 'stack' | 'manifesto'>('status');
+  const [activeTab, setActiveTab] = useState<'console' | 'stack' | 'sla'>('console');
+  const [runningTest, setRunningTest] = useState(false);
+  const [completedSuites, setCompletedSuites] = useState(LIVE_TEST_CONSOLE);
+
+  const handleRerun = () => {
+    setRunningTest(true);
+    setTimeout(() => {
+      setRunningTest(false);
+    }, 600);
+  };
 
   return (
     <section className="pt-28 pb-16 md:pt-36 md:pb-24 px-4 sm:px-6 max-w-6xl mx-auto">
@@ -16,10 +25,10 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
       <div className="flex flex-wrap items-center gap-2 mb-6">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-ink-900 text-white dark:bg-white dark:text-ink-950 font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink-900 dark:border-white shadow-solid-xs">
           <span className="w-2 h-2 bg-brand-emerald"></span>
-          Portofolio Rekayasa Perangkat Lunak
+          Quality Assurance & Test Automation Specialist
         </span>
         <span className="inline-flex items-center gap-1 px-3 py-1 bg-brand-blue text-white font-mono text-xs font-bold uppercase tracking-wider border-2 border-ink-900 dark:border-white shadow-solid-xs">
-          Nol Gradien • Warna Tegas & Presisi
+          Nol Gradien • Zero Defect Escapes
         </span>
       </div>
 
@@ -31,15 +40,15 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               // {PERSONAL_INFO.name}
             </h2>
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-ink-950 dark:text-white tracking-tight leading-[1.08]">
-              Software Engineer & <span className="bg-brand-amber text-ink-950 px-2 py-0.5 inline-block border-2 border-ink-900 shadow-solid-xs">AI Systems</span> Builder.
+              Lead <span className="bg-brand-emerald text-white px-2 py-0.5 inline-block border-2 border-ink-900 shadow-solid-xs">QA Engineer</span> & Test Automation.
             </h1>
           </div>
 
           <p className="text-lg text-ink-700 dark:text-ink-300 leading-relaxed font-sans max-w-2xl">
-            {PERSONAL_INFO.tagline} Berfokus pada perancangan sistem end-to-end: mulai dari 
-            <strong className="text-ink-950 dark:text-white font-semibold"> Fullstack Web (Next.js/React)</strong>, 
-            <strong className="text-ink-950 dark:text-white font-semibold"> Otomasi AI Enterprise (Azure OpenAI)</strong>, 
-            hingga arsitektur <strong className="text-ink-950 dark:text-white font-semibold"> Desktop Native berkecepatan tinggi</strong>.
+            {PERSONAL_INFO.tagline} Menguasai spektrum pengujian menyeluruh: dari 
+            <strong className="text-ink-950 dark:text-white font-semibold"> UAT Finansial Multi-Role (BCA Finance One ME)</strong>, 
+            <strong className="text-ink-950 dark:text-white font-semibold"> Otomasi Agentic QA (Azure AI Foundry)</strong>, 
+            hingga arsitektur pengujian <strong className="text-ink-950 dark:text-white font-semibold"> API & Visual Regression tingkat tinggi</strong>.
           </p>
 
           {/* Action CTAs */}
@@ -48,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-blue text-white font-bold text-base border-2 border-ink-900 dark:border-white shadow-solid hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-solid-sm transition-all"
             >
-              <span>Jelajahi Proyek</span>
+              <span>Jelajahi Proyek QA</span>
               <ArrowDown size={18} />
             </a>
 
@@ -64,7 +73,7 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               ) : (
                 <>
                   <Copy size={18} />
-                  <span>Salin Email</span>
+                  <span>Salin Email Rekrutmen</span>
                 </>
               )}
             </button>
@@ -74,24 +83,24 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
           <div className="pt-4 border-t-2 border-ink-900/10 dark:border-ink-700/60 grid grid-cols-2 sm:grid-cols-2 gap-3 text-sm font-medium">
             <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
               <span className="w-2.5 h-2.5 bg-brand-blue inline-block border border-ink-900"></span>
-              <span>Fullstack Next.js & TypeScript</span>
-            </div>
-            <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
-              <span className="w-2.5 h-2.5 bg-brand-emerald inline-block border border-ink-900"></span>
-              <span>Azure OpenAI & Agentic QA</span>
-            </div>
-            <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
-              <span className="w-2.5 h-2.5 bg-brand-crimson inline-block border border-ink-900"></span>
-              <span>macOS Cocoa & Windows Hooks</span>
+              <span>BCA Finance Core UAT Testing</span>
             </div>
             <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
               <span className="w-2.5 h-2.5 bg-brand-amber inline-block border border-ink-900"></span>
-              <span>Zero-Gradient Solid Aesthetic</span>
+              <span>Baydo AI & Agentic QA Engine</span>
+            </div>
+            <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
+              <span className="w-2.5 h-2.5 bg-brand-emerald inline-block border border-ink-900"></span>
+              <span>Postman, Newman & API Suites</span>
+            </div>
+            <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
+              <span className="w-2.5 h-2.5 bg-brand-crimson inline-block border border-ink-900"></span>
+              <span>Boundary Value & Security QA</span>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Architectural Terminal / Code Card */}
+        {/* Right Column: Interactive QA Test Runner */}
         <div className="lg:col-span-5">
           <div className="border-2 border-ink-900 dark:border-ink-700 bg-paper-surface dark:bg-paper-darkSurface shadow-solid-lg overflow-hidden">
             {/* Terminal Header */}
@@ -101,25 +110,30 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
                 <span className="w-3 h-3 bg-brand-amber inline-block border border-black"></span>
                 <span className="w-3 h-3 bg-brand-emerald inline-block border border-black"></span>
                 <span className="font-mono text-xs font-semibold ml-2 text-ink-300">
-                  ihsan@system-core ~ v2.4
+                  pytest-runner --all-suites
                 </span>
               </div>
-              <span className="font-mono text-xs px-2 py-0.5 bg-brand-blue text-white font-bold">
-                PROD READY
-              </span>
+              <button
+                onClick={handleRerun}
+                disabled={runningTest}
+                className="inline-flex items-center gap-1 font-mono text-[11px] px-2 py-0.5 bg-brand-emerald text-white font-bold border border-black hover:bg-emerald-600 transition-colors"
+              >
+                <Play size={10} className={runningTest ? 'animate-spin' : ''} />
+                <span>{runningTest ? 'TESTING...' : 'RUN TESTS'}</span>
+              </button>
             </div>
 
             {/* Sub Tabs */}
             <div className="flex border-b-2 border-ink-900 dark:border-ink-700 bg-paper-alt dark:bg-paper-darkAlt">
               <button
-                onClick={() => setActiveTab('status')}
+                onClick={() => setActiveTab('console')}
                 className={`flex-1 py-2 text-xs font-mono font-bold uppercase transition-colors ${
-                  activeTab === 'status'
+                  activeTab === 'console'
                     ? 'bg-paper-surface dark:bg-paper-darkSurface text-ink-950 dark:text-white border-r-2 border-ink-900 dark:border-ink-700'
                     : 'text-ink-600 dark:text-ink-400 hover:text-ink-950'
                 }`}
               >
-                // System Status
+                // Live Test Suites
               </button>
               <button
                 onClick={() => setActiveTab('stack')}
@@ -129,88 +143,91 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
                     : 'text-ink-600 dark:text-ink-400 hover:text-ink-950'
                 }`}
               >
-                // Core Stack
+                // QA Arsenal
               </button>
               <button
-                onClick={() => setActiveTab('manifesto')}
+                onClick={() => setActiveTab('sla')}
                 className={`flex-1 py-2 text-xs font-mono font-bold uppercase transition-colors ${
-                  activeTab === 'manifesto'
+                  activeTab === 'sla'
                     ? 'bg-paper-surface dark:bg-paper-darkSurface text-ink-950 dark:text-white'
                     : 'text-ink-600 dark:text-ink-400 hover:text-ink-950'
                 }`}
               >
-                // Design Rule
+                // Quality Metrics
               </button>
             </div>
 
             {/* Terminal Body */}
-            <div className="p-5 font-mono text-xs space-y-4">
-              {activeTab === 'status' && (
+            <div className="p-4 sm:p-5 font-mono text-xs space-y-3 max-h-[360px] overflow-y-auto">
+              {activeTab === 'console' && (
                 <div className="space-y-3">
-                  <div className="p-3 bg-paper-alt dark:bg-paper-darkAlt border border-ink-900/20 dark:border-ink-700">
-                    <div className="flex items-center justify-between text-brand-emerald font-bold">
-                      <span>[ONLINE] FinTrack AI Engine</span>
-                      <span>v1.0.0</span>
+                  {runningTest ? (
+                    <div className="py-8 text-center space-y-2 text-brand-blue font-bold">
+                      <div className="inline-block animate-spin font-display text-2xl">⚙</div>
+                      <p className="text-xs font-mono">Menjalankan 12 assertion suite...</p>
                     </div>
-                    <p className="text-ink-600 dark:text-ink-400 mt-1">
-                      Azure OpenAI GPT-4o + IMAP parser mutasi BCA, Mandiri, BRI, e-Wallet.
-                    </p>
-                  </div>
-
-                  <div className="p-3 bg-paper-alt dark:bg-paper-darkAlt border border-ink-900/20 dark:border-ink-700">
-                    <div className="flex items-center justify-between text-brand-crimson font-bold">
-                      <span>[ACTIVE] Hide Your Interview</span>
-                      <span>Cocoa / Win32</span>
-                    </div>
-                    <p className="text-ink-600 dark:text-ink-400 mt-1">
-                      100% Invisible to Zoom/GMeet capture via NSWindowSharingNone.
-                    </p>
-                  </div>
-
-                  <div className="p-3 bg-paper-alt dark:bg-paper-darkAlt border border-ink-900/20 dark:border-ink-700">
-                    <div className="flex items-center justify-between text-brand-amber font-bold">
-                      <span>[READY] Agentic QA Generator</span>
-                      <span>Baydo AI</span>
-                    </div>
-                    <p className="text-ink-600 dark:text-ink-400 mt-1">
-                      Automated SRS decomposition & multi-level test case DOCX generation.
-                    </p>
-                  </div>
+                  ) : (
+                    completedSuites.map((suite, idx) => (
+                      <div
+                        key={idx}
+                        className="p-3 bg-paper-alt dark:bg-paper-darkAlt border-2 border-ink-900/15 dark:border-ink-700 space-y-2"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="font-bold text-ink-950 dark:text-white truncate pr-2">
+                            {suite.suiteName}
+                          </span>
+                          <span className="px-1.5 py-0.5 bg-brand-emerald text-white text-[10px] font-bold">
+                            {suite.status} ({suite.duration})
+                          </span>
+                        </div>
+                        <div className="space-y-1 text-[11px] text-ink-600 dark:text-ink-400">
+                          {suite.assertions.map((assertion, aIdx) => (
+                            <div key={aIdx} className="flex items-center justify-between">
+                              <span className="truncate pr-2 font-mono">
+                                ✓ {assertion.name}
+                              </span>
+                              <span className="text-brand-emerald font-bold">PASS</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))
+                  )}
                 </div>
               )}
 
               {activeTab === 'stack' && (
                 <div className="space-y-2">
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">Frontend:</span>
-                    <span className="font-bold text-ink-900 dark:text-white">Next.js 14, React 18, Tailwind CSS</span>
+                    <span className="text-ink-500">Automation:</span>
+                    <span className="font-bold text-ink-950 dark:text-white">Playwright, PyTest, Selenium, Cypress</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">AI / LLM:</span>
-                    <span className="font-bold text-brand-emerald">Azure OpenAI (GPT-4o), Agentic Workflows</span>
+                    <span className="text-ink-500">API Testing:</span>
+                    <span className="font-bold text-brand-emerald">Postman, Newman, REST Assured, OAuth2</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">Backend:</span>
-                    <span className="font-bold text-ink-900 dark:text-white">Python FastAPI, Node.js, SQLite/Postgres</span>
+                    <span className="text-ink-500">AI Testing:</span>
+                    <span className="font-bold text-brand-amber">Azure AI Foundry, LLM Prompt Eval, BVA</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">Systems:</span>
-                    <span className="font-bold text-brand-blue">macOS Cocoa API, Win32 Affinity, Rust/Tauri</span>
+                    <span className="text-ink-500">Domain QA:</span>
+                    <span className="font-bold text-brand-blue">BCA Finance One ME, Credit & SLIK</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5">
-                    <span className="text-ink-500">Tooling:</span>
-                    <span className="font-bold text-brand-amber">Docker, Git CI/CD, Chrome Extensions V3</span>
+                    <span className="text-ink-500">Management:</span>
+                    <span className="font-bold text-brand-crimson">JIRA, TestRail, Confluence, GitLab CI/CD</span>
                   </div>
                 </div>
               )}
 
-              {activeTab === 'manifesto' && (
-                <div className="p-3 bg-brand-blue/10 dark:bg-brand-blue/20 border-2 border-brand-blue text-ink-900 dark:text-ink-100 space-y-2">
-                  <div className="font-bold text-brand-blue dark:text-blue-400">
-                    // STRICT DESIGN CONSTRAINT:
+              {activeTab === 'sla' && (
+                <div className="p-3 bg-brand-emerald/10 dark:bg-brand-emerald/20 border-2 border-brand-emerald text-ink-900 dark:text-ink-100 space-y-2">
+                  <div className="font-bold text-brand-emerald">
+                    // QA STANDAR EMAS (ZERO DEFECT ESCAPE):
                   </div>
-                  <p className="leading-relaxed">
-                    "Tanpa gradien sama sekali. Warna solid yang berani (Electric Cobalt, Warm Ochre, Forest Jade, Crimson Red) dengan tipografi tegas menghasilkan tampilan yang bersih, kontras tinggi, dan nyaman dibaca berjam-jam."
+                  <p className="leading-relaxed text-[11px]">
+                    "Setiap pengujian mematuhi matriks pelacakan (Traceability Matrix) penuh. Pengujian batas nilai (BVA) dan kasus ekstrim (Edge cases) diuji sebelum rilis UAT agar integritas transaksi finansial 100% terjamin tanpa risiko finansial."
                   </p>
                 </div>
               )}
@@ -219,10 +236,10 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               <div className="pt-2 flex items-center justify-between text-ink-500 text-[11px] border-t border-ink-900/10 dark:border-ink-700">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-ping"></span>
-                  Latency: 14ms (Optimal)
+                  QA Health: 100% Passed
                 </span>
                 <span className="font-bold text-ink-700 dark:text-ink-300">
-                  ID: {PERSONAL_INFO.preferredName.toUpperCase()}@DEV
+                  QA-ID: {PERSONAL_INFO.preferredName.toUpperCase()}@TEST-LAB
                 </span>
               </div>
             </div>
