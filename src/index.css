@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #F6F6F2;
+    --color-card: #FFFFFF;
+    --color-border: #E2E8F0;
+    --color-border-bold: #11141A;
+  }
+
+  .dark {
+    --color-bg: #0D0F12;
+    --color-card: #16191F;
+    --color-border: #272E3B;
+    --color-border-bold: #FFFFFF;
+  }
+
+  /* Custom solid scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #E2E8F0;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: #1B202A;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1D4ED8;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1E40AF;
+  }
+}
+
+/* Crisp solid border utilities */
+.border-solid-crisp {
+  border: 2px solid #11141A;
+}
+
+.dark .border-solid-crisp {
+  border: 2px solid #334155;
+}
+
+/* Sharp focus styling without blur */
+*:focus-visible {
+  outline: 3px solid #1D4ED8;
+  outline-offset: 2px;
+}
