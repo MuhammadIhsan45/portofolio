@@ -46,10 +46,10 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
 
           <p className="text-lg text-ink-700 dark:text-ink-300 leading-relaxed font-sans max-w-2xl">
             {PERSONAL_INFO.tagline} Menguasai spektrum pengujian menyeluruh: dari 
-            <strong className="text-ink-950 dark:text-white font-semibold"> Core Banking Temenos T24</strong> (disbursement & reversal), 
-            <strong className="text-ink-950 dark:text-white font-semibold"> Sistem Operasional Cabang SIFO</strong>, 
-            <strong className="text-ink-950 dark:text-white font-semibold"> UAT Finansial BCA Finance (One ME)</strong>, 
-            hingga arsitektur pengujian <strong className="text-ink-950 dark:text-white font-semibold"> Agentic QA berbasis AI</strong>.
+            <strong className="text-ink-950 dark:text-white font-semibold"> Core Banking Temenos T24 (BSI Customer, Funding & Delta Code)</strong>, 
+            <strong className="text-ink-950 dark:text-white font-semibold"> SIFO (System Integration Financing and Operations)</strong> di BSI Digilab, 
+            <strong className="text-ink-950 dark:text-white font-semibold"> Sistem Finansial Enterprise & AI Test Generator (BCAF)</strong>, 
+            hingga pengujian platform global <strong className="text-ink-950 dark:text-white font-semibold">(TikTok, Instagram, Crypto.com, Canva)</strong> di Tester Work UK.
           </p>
 
           {/* Action CTAs */}
@@ -83,20 +83,20 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
           {/* Core Strengths Checklist */}
           <div className="pt-4 border-t-2 border-ink-900/10 dark:border-ink-700/60 grid grid-cols-2 sm:grid-cols-2 gap-3 text-sm font-medium">
             <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
+              <span className="w-2.5 h-2.5 bg-brand-emerald inline-block border border-ink-900"></span>
+              <span>Core Banking T24 (Temenos BSI)</span>
+            </div>
+            <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
               <span className="w-2.5 h-2.5 bg-brand-blue inline-block border border-ink-900"></span>
-              <span>Core Banking Temenos T24</span>
+              <span>BCA Finance & AI Test Generator</span>
             </div>
             <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
               <span className="w-2.5 h-2.5 bg-brand-amber inline-block border border-ink-900"></span>
-              <span>SIFO Branch Operations QA</span>
-            </div>
-            <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
-              <span className="w-2.5 h-2.5 bg-brand-emerald inline-block border border-ink-900"></span>
-              <span>BCA Finance One ME UAT</span>
+              <span>SIFO (BSI Digilab Program)</span>
             </div>
             <div className="flex items-center gap-2 text-ink-800 dark:text-ink-200">
               <span className="w-2.5 h-2.5 bg-brand-crimson inline-block border border-ink-900"></span>
-              <span>Baydo Agentic QA Pipeline</span>
+              <span>Global QA: TikTok, Canva, Meta</span>
             </div>
           </div>
         </div>
@@ -201,23 +201,23 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
                 <div className="space-y-2">
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
                     <span className="text-ink-500">Core Banking:</span>
-                    <span className="font-bold text-brand-blue">Temenos T24, corAccount, Reverse Disburse</span>
+                    <span className="font-bold text-brand-emerald">Temenos T24 (BSI PIC Product Testing)</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">Branch System:</span>
-                    <span className="font-bold text-brand-amber">SIFO Front Office, Agunan, Branch ID</span>
+                    <span className="text-ink-500">BSI Digilab:</span>
+                    <span className="font-bold text-brand-blue">SIFO (System Integration Financing & Operations)</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">Multifinance:</span>
-                    <span className="font-bold text-brand-emerald">BCA Finance One ME (15 Modul UAT)</span>
+                    <span className="text-ink-500">BCA Finance:</span>
+                    <span className="font-bold text-ink-950 dark:text-white">AI-Powered Test Generator (-75% time)</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5 border-b border-ink-900/10 dark:border-ink-700">
-                    <span className="text-ink-500">AI & Automation:</span>
-                    <span className="font-bold text-ink-950 dark:text-white">Azure AI Foundry, Playwright, PyTest</span>
+                    <span className="text-ink-500">Global QA:</span>
+                    <span className="font-bold text-brand-amber">Tester Work UK (TikTok, Canva, Crypto.com)</span>
                   </div>
                   <div className="flex items-center justify-between py-1.5">
-                    <span className="text-ink-500">Database & Tools:</span>
-                    <span className="font-bold text-brand-crimson">SQL Server, Stored Procedures, JIRA</span>
+                    <span className="text-ink-500">Automation:</span>
+                    <span className="font-bold text-brand-crimson">Katalon Studio, Robot Framework, Cypress</span>
                   </div>
                 </div>
               )}
@@ -225,10 +225,10 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               {activeTab === 'sla' && (
                 <div className="p-3 bg-brand-emerald/10 dark:bg-brand-emerald/20 border-2 border-brand-emerald text-ink-900 dark:text-ink-100 space-y-2">
                   <div className="font-bold text-brand-emerald">
-                    // CORE BANKING & SIFO VERIFICATION SLA:
+                    // CORE BANKING, SIFO & ENTERPRISE SLA:
                   </div>
                   <p className="leading-relaxed text-[11px]">
-                    "Setiap alur disbursement, reverse disbursement pada T24, dan validasi fisik agunan pada SIFO diuji dengan integritas transaksi database absolut. Nol toleransi terhadap selisih saldo pembukuan (General Ledger) dan kegagalan sinkronisasi antar cabang."
+                    "Pengujian T24 pada squad Customer, Funding, dan Delta Code, inisiatif ALL-IN-ONE SQA hub di Notion yang mempercepat penyiapan data 50%, serta otomasi Katalon/Robot Framework pada SIFO dan BCAF menjamin nol defect escape ke lingkungan produksi."
                   </p>
                 </div>
               )}
@@ -237,7 +237,7 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               <div className="pt-2 flex items-center justify-between text-ink-500 text-[11px] border-t border-ink-900/10 dark:border-ink-700">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-emerald animate-ping"></span>
-                  T24 & SIFO Engine: All Passed
+                  T24, SIFO & BCAF Engine: 100% Verified
                 </span>
                 <span className="font-bold text-ink-700 dark:text-ink-300">
                   QA-ID: {PERSONAL_INFO.preferredName.toUpperCase()}@FIN-CORE
