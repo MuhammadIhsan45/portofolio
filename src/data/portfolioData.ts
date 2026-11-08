@@ -8,7 +8,7 @@ export interface Project {
   tags: string[];
   metrics: { label: string; value: string }[];
   featured: boolean;
-  solidAccentColor: string; // Solid hex color
+  solidAccentColor: string;
   accentBadgeBg: string;
   accentBadgeText: string;
   githubUrl?: string;
@@ -42,17 +42,33 @@ export interface TechSkill {
   description: string;
 }
 
+export interface SampleTestCase {
+  id: string;
+  title: string;
+  module: string;
+  priority: 'CRITICAL' | 'HIGH' | 'MEDIUM';
+  methodology: 'Boundary Value Analysis' | 'Equivalence Partitioning' | 'Concurrency & State Transition';
+  preconditions: string[];
+  testSteps: string[];
+  testData: { param: string; value: string; note: string }[];
+  expectedResult: string;
+  actualResult: string;
+  status: 'PASSED';
+  executionTime: string;
+  colorAccent: string;
+}
+
 export const PERSONAL_INFO = {
   name: 'Muhammad Ihsan Syarifudin',
   preferredName: 'Ihsan',
-  title: 'Lead QA Engineer & Test Automation Specialist',
+  title: 'QA Engineer & Test Automation Specialist',
   tagline: 'Memastikan stabilitas sistem enterprise finansial, merancang framework test automation end-to-end, dan memelopori Agentic AI untuk otomasi pengujian perangkat lunak tanpa celah.',
   bio: 'Quality Assurance Engineer profesional yang berfokus pada keandalan sistem berskala besar. Berpengalaman memimpin pengujian UAT & integrasi pada aplikasi multifinance perbankan (BCA Finance One ME), merancang platform AI Test Case Generator berbasis Azure AI Foundry (Baydo), serta membangun perkakas otomasi internal untuk memangkas siklus rilis pengujian hingga 85% dengan tingkat defect escape nol pada fungsi kritikal.',
   location: 'Indonesia',
   email: 'muhsanz41@gmail.com',
   github: 'https://github.com',
   linkedin: 'https://linkedin.com',
-  status: 'Open for QA Lead & Test Automation Opportunities',
+  status: 'Open for QA & Test Automation Opportunities',
   stats: [
     { label: 'Test Cases Dijalankan', value: '1,500+', detail: 'Manual & Automated Test Suites' },
     { label: 'Critical Path Coverage', value: '99.4%', detail: 'Fintech & Multi-role Approval' },
@@ -76,7 +92,7 @@ export const PROJECTS: Project[] = [
       { label: 'Format Ekspor', value: 'DOCX & PDF Otomatis' },
     ],
     featured: true,
-    solidAccentColor: '#D97706', // Bold Warm Ochre / Amber
+    solidAccentColor: '#D97706',
     accentBadgeBg: 'bg-amber-600',
     accentBadgeText: 'text-white',
     highlights: [
@@ -106,7 +122,7 @@ export const PROJECTS: Project[] = [
       { label: 'Critical Escapes', value: '0 Defect ke Prod' },
     ],
     featured: true,
-    solidAccentColor: '#1D4ED8', // Electric Cobalt Blue
+    solidAccentColor: '#1D4ED8',
     accentBadgeBg: 'bg-blue-700',
     accentBadgeText: 'text-white',
     highlights: [
@@ -136,7 +152,7 @@ export const PROJECTS: Project[] = [
       { label: 'Fasilitas Audit', value: 'Highlighter & Markup' },
     ],
     featured: true,
-    solidAccentColor: '#059669', // Forest Jade
+    solidAccentColor: '#059669',
     accentBadgeBg: 'bg-emerald-600',
     accentBadgeText: 'text-white',
     highlights: [
@@ -166,7 +182,7 @@ export const PROJECTS: Project[] = [
       { label: 'Penghematan Waktu QA', value: '~2 Jam / Hari' },
     ],
     featured: false,
-    solidAccentColor: '#DC2626', // Crimson Red
+    solidAccentColor: '#DC2626',
     accentBadgeBg: 'bg-red-600',
     accentBadgeText: 'text-white',
     highlights: [
@@ -195,7 +211,7 @@ export const PROJECTS: Project[] = [
       { label: 'Uji Biaya Admin Bank', value: '100% Lolos Uji' },
     ],
     featured: false,
-    solidAccentColor: '#059669', // Forest Jade
+    solidAccentColor: '#059669',
     accentBadgeBg: 'bg-emerald-600',
     accentBadgeText: 'text-white',
     highlights: [
@@ -224,7 +240,7 @@ export const PROJECTS: Project[] = [
       { label: 'Lighthouse Score', value: '98/100 Tested' },
     ],
     featured: false,
-    solidAccentColor: '#1D4ED8', // Cobalt
+    solidAccentColor: '#1D4ED8',
     accentBadgeBg: 'bg-blue-700',
     accentBadgeText: 'text-white',
     highlights: [
@@ -238,6 +254,124 @@ export const PROJECTS: Project[] = [
       toolsUsed: ['Playwright', 'Postman Newman', 'PostgreSQL'],
       bugPreventionCount: 'Pencegahan Bug Kritis Double Booking',
     },
+  },
+];
+
+export const SAMPLE_TEST_CASES: SampleTestCase[] = [
+  {
+    id: 'TC-BCAF-0142',
+    title: 'Validasi Batas Bawah Persentase Uang Muka (TDP) Skema Pembiayaan SHF',
+    module: 'BCA Finance One ME — Modul Aplikasi Baru SHF',
+    priority: 'CRITICAL',
+    methodology: 'Boundary Value Analysis',
+    colorAccent: '#1D4ED8',
+    preconditions: [
+      'Pengguna telah terautentikasi sebagai CMO aktif.',
+      'Data kendaraan terdaftar dalam database harga pasar OTR resmi (Rp 300.000.000).',
+      'Tenor dipilih 36 Bulan dengan skema bunga efektif.',
+    ],
+    testSteps: [
+      'Buka formulir kalkulasi simulasi pembiayaan Second Hand Financing (SHF).',
+      'Masukkan harga OTR kendaraan senilai Rp 300.000.000.',
+      'Uji batas bawah TDP pada nilai 19.99% (Rp 59.970.000).',
+      'Uji batas minimum legal regulasi pada nilai tepat 20.00% (Rp 60.000.000).',
+      'Uji batas atas normal pada nilai 20.01% (Rp 60.030.000).',
+      'Klik tombol kalkulasi dan periksa status validasi form.',
+    ],
+    testData: [
+      { param: 'TDP 19.99%', value: 'Rp 59.970.000', note: 'Harus Ditolak (Error: Di bawah regulasi OJK 20%)' },
+      { param: 'TDP 20.00%', value: 'Rp 60.000.000', note: 'Harus Diterima (Valid Boundary Pass)' },
+      { param: 'TDP 20.01%', value: 'Rp 60.030.000', note: 'Harus Diterima (Normal Partition Pass)' },
+    ],
+    expectedResult: 'Sistem menampilkan pesan error validasi pada 19.99% dan berhasil melanjutkan ke perhitungan angsuran pada 20.00% dan 20.01%.',
+    actualResult: '19.99% terblokir dengan teks error regulasi OJK; 20.00% dan 20.01% berhasil dihitung secara presisi tanpa pembulatan menyimpang.',
+    status: 'PASSED',
+    executionTime: '24ms',
+  },
+  {
+    id: 'TC-BAYDO-0089',
+    title: 'Ekstraksi Otomatis Aturan Bisnis Ambigu dari Dokumen SRS 200+ Halaman',
+    module: 'Baydo Agentic QA — AI SRS Decomposition Pipeline',
+    priority: 'HIGH',
+    methodology: 'Equivalence Partitioning',
+    colorAccent: '#D97706',
+    preconditions: [
+      'Azure AI Foundry instance online dengan model GPT-4o.',
+      'Dokumen SRS berformat DOCX berisi tabel spesifikasi approval limit bertingkat.',
+    ],
+    testSteps: [
+      'Upload dokumen spesifikasi kebutuhan sistem dengan 3 klausul ambigu pada penentuan otorisasi cabang.',
+      'Jalankan pipeline dekonstruksi Agentic QA.',
+      'Verifikasi output identifikasi celah ambiguitas dokumen.',
+      'Periksa apakah test suite yang dihasilkan mencakup skenario unhandled exceptions.',
+    ],
+    testData: [
+      { param: 'Input Dokumen', value: 'SRS_Financing_Core_v2.docx', note: '214 Halaman, 45 Tabel Matrix' },
+      { param: 'Threshold Conf.', value: '0.90 temperature=0.1', note: 'Deterministik tanpa halusinasi' },
+      { param: 'Output Ekspor', value: 'Test_Suite_Matrix.docx', note: 'Format hirarkis berpenomoran' },
+    ],
+    expectedResult: 'Pipeline mendeteksi 3 klausul tanpa penanggung jawab dan men-generate 18 test cases tambahan untuk boundary approval.',
+    actualResult: '3 klausul ambigu berhasil di-flag dengan laporan deviasi; 18 test cases tersusun rapi dengan label WARNING.',
+    status: 'PASSED',
+    executionTime: '680ms',
+  },
+  {
+    id: 'TC-DOCDIFF-0034',
+    title: 'Verifikasi Stempel Basah & Tanda Tangan pada Dokumen Kontrak PDF 27 Halaman',
+    module: 'DocDiff Pro — Native Visual Regression',
+    priority: 'CRITICAL',
+    methodology: 'Concurrency & State Transition',
+    colorAccent: '#059669',
+    preconditions: [
+      'File PDF Dokumen A: Kontrak Pembiayaan Asli bertanda tangan (12MB).',
+      'File PDF Dokumen B: Kontrak Hasil Regenerasi Sistem Baru (12MB).',
+    ],
+    testSteps: [
+      'Buka DocDiff Pro pada desktop macOS Cocoa.',
+      'Muat kedua dokumen secara bersamaan ke canvas berdampingan (Side-by-Side).',
+      'Gunakan navigasi thumbnail untuk melompat langsung ke halaman 27 (lembar tanda tangan).',
+      'Gunakan alat stabilo digital untuk memverifikasi keselarasan stempel materai dan blok tanda tangan debitur.',
+    ],
+    testData: [
+      { param: 'Ukuran Dokumen', value: '12.4 MB (27 Halaman)', note: 'High resolution scan 300 DPI' },
+      { param: 'Toleransi Offset', value: '0 Pixel Margin', note: 'Posisi materai & tanda tangan' },
+      { param: 'Render Engine', value: 'macOS Native PDFKit', note: 'Zero lossy conversion' },
+    ],
+    expectedResult: 'Kedua dokumen terbuka dalam waktu < 1 detik; tidak ada teks atau stempel yang bergeser dari grid resmi.',
+    actualResult: 'Render instan 410ms; keselarasan visual terkonfirmasi 100% tanpa deviasi layout.',
+    status: 'PASSED',
+    executionTime: '410ms',
+  },
+];
+
+export const BUG_SEVERITY_LEVELS = [
+  {
+    level: 'Blocker (S1)',
+    color: '#DC2626',
+    sla: '< 2 Jam Response',
+    description: 'Sistem mogok total, data finansial korup, atau alur transaksi pokok tidak dapat dilanjutkan tanpa adanya *workaround*.',
+    example: 'Kalkulasi angsuran bunga menghasilkan nilai NaN atau modul persetujuan kredit tidak dapat dibuka sama sekali.',
+  },
+  {
+    level: 'Critical (S2)',
+    color: '#D97706',
+    sla: '< 6 Jam Response',
+    description: 'Fitur inti mengalami kegagalan signifikan, namun sistem masih berjalan sebagian dengan jalur alternatif sementara.',
+    example: 'Validasi SLIK BI Checking gagal otomatis namun dapat di-override secara manual dengan audit log.',
+  },
+  {
+    level: 'Major (S3)',
+    color: '#1D4ED8',
+    sla: '< 24 Jam Response',
+    description: 'Fitur pendukung tidak bekerja sesuai spesifikasi, namun alur bisnis utama pengguna tetap dapat diselesaikan.',
+    example: 'Filter pencarian daftar aplikasi lama tidak merespon saat memilih rentang tanggal tertentu.',
+  },
+  {
+    level: 'Minor (S4)',
+    color: '#059669',
+    sla: 'Next Sprint Release',
+    description: 'Ketidaksesuaian kosmetik, inkonsistensi tipografi, atau label teks yang salah ketik tanpa mengganggu fungsi operasional.',
+    example: 'Penyelarasan teks pada tabel ringkasan kontrak bergeser 4 pixel di layar tablet.',
   },
 ];
 
@@ -302,7 +436,7 @@ export const TECH_SKILLS: TechSkill[] = [
 
 export const WORK_EXPERIENCES: Experience[] = [
   {
-    role: 'Lead QA Engineer & AI Test Automation',
+    role: 'QA Engineer & AI Test Automation',
     company: 'Enterprise FinTech & R&D Solutions',
     period: '2023 — Sekarang',
     location: 'Indonesia',

@@ -1,6 +1,6 @@
-# 🧪 Portofolio Muhammad Ihsan Syarifudin — Lead QA Engineer & Test Automation Specialist
+# 🧪 Portofolio Muhammad Ihsan Syarifudin — QA Engineer & Test Automation Specialist
 
-Website portofolio resmi **Muhammad Ihsan Syarifudin** sebagai **Lead Quality Assurance (QA) Engineer & Test Automation Specialist**, dirancang dengan gaya **Neo-Editorial & Architectural Minimalism**: **100% Bebas Gradien (Zero Gradients)** dengan **Warna Solid Tegas** yang terkurasi, nyaman di mata (WCAG AAA compliant), dan sarat dengan proyek pengujian enterprise nyata.
+Website portofolio resmi **Muhammad Ihsan Syarifudin** sebagai **Quality Assurance (QA) Engineer & Test Automation Specialist**, dirancang dengan gaya **Neo-Editorial & Architectural Minimalism**: **100% Bebas Gradien (Zero Gradients)** dengan **Warna Solid Tegas** yang terkurasi, nyaman di mata (WCAG AAA compliant), dan sarat dengan proyek pengujian enterprise nyata.
 
 ---
 

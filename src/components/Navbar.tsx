@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
             <div className="flex items-center gap-1.5 mt-0.5">
               <span className="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
               <span className="text-xs font-mono text-brand-emerald font-semibold uppercase tracking-wider">
-                Lead QA & Test Automation
+                QA & Test Automation
               </span>
             </div>
           </div>

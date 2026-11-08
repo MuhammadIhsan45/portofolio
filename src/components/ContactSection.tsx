@@ -12,7 +12,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    topic: 'Peluang Karir QA Engineer / Lead QA',
+    topic: 'Peluang Karir QA Engineer / Tester',
     message: '',
   });
 
@@ -46,7 +46,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
               Siap Menjaga Kualitas Sistem Anda
             </h2>
             <p className="text-base text-ink-700 dark:text-ink-300 font-sans leading-relaxed">
-              Mencari Lead QA Engineer, arsitek test automation, atau ingin mengimplementasikan Agentic AI untuk mereduksi waktu QA tim Anda? Hubungi saya untuk diskusi teknis.
+              Mencari QA Engineer, arsitek test automation, atau ingin mengimplementasikan Agentic AI untuk mereduksi waktu QA tim Anda? Hubungi saya untuk diskusi teknis.
             </p>
           </div>
 
@@ -181,7 +181,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onCopyEmail, cop
                 onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
                 className="w-full px-3 py-2.5 bg-paper-alt dark:bg-paper-darkAlt border-2 border-ink-900 dark:border-ink-700 text-sm font-sans text-ink-950 dark:text-white focus:outline-none focus:border-brand-blue"
               >
-                <option value="Peluang Karir QA Engineer / Lead QA">Peluang Karir QA Engineer / Lead QA</option>
+                <option value="Peluang Karir QA Engineer / Tester">Peluang Karir QA Engineer / Tester</option>
                 <option value="Otomasi Pengujian & Agentic QA Consultation">Otomasi Pengujian & Agentic QA</option>
                 <option value="Audit Kualitas & UAT Sistem Finansial">Audit Kualitas & UAT Sistem Finansial</option>
                 <option value="Proyek QA Freelance / Kontrak">Proyek QA Freelance / Kontrak</option>

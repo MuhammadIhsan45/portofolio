@@ -40,7 +40,7 @@ export const Hero: React.FC<HeroProps> = ({ onCopyEmail, copied }) => {
               // {PERSONAL_INFO.name}
             </h2>
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-ink-950 dark:text-white tracking-tight leading-[1.08]">
-              Lead <span className="bg-brand-emerald text-white px-2 py-0.5 inline-block border-2 border-ink-900 shadow-solid-xs">QA Engineer</span> & Test Automation.
+              <span className="bg-brand-emerald text-white px-2 py-0.5 inline-block border-2 border-ink-900 shadow-solid-xs">QA Engineer</span> & Test Automation.
             </h1>
           </div>
 
