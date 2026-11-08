@@ -64,7 +64,7 @@ export const ExperienceSection: React.FC = () => {
               <div className="font-mono text-xs uppercase tracking-widest text-ink-500 font-bold">
                 Pencapaian Utama & Dampak Teknis:
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {exp.achievements.map((item, i) => (
                   <div
                     key={i}
